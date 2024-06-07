@@ -8,6 +8,7 @@
   width: 12px;
 }
 
+
 *::-webkit-scrollbar-thumb {
   @apply bg-secondary-regular;
 }
