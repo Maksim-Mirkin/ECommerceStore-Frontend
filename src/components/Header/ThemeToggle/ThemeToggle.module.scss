@@ -1,0 +1,12 @@
+.toggle-button{
+    transition: 0.3s ease-in-out;
+
+    &.dark{
+        transform: rotate(360deg);
+    }
+
+    &.light{
+        transform: rotate(0deg);
+    }
+    
+}

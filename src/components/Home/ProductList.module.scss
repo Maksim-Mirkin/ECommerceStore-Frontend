@@ -1,0 +1,56 @@
+.products {
+  --product-count: 9;
+  --product-size: 266px;
+
+  --column-size: calc(var(--product-size) / 3);
+
+  grid-template-columns: repeat(var(--product-count), var(--column-size));
+  transition: 500ms;
+  transition-delay: 200ms;
+}
+$product-count: 9;
+@for $i from 1 through $product-count {
+  .products > :nth-child(#{$i}) {
+    z-index: #{$product-count - $i + 1};
+  }
+}
+
+.products:hover {
+  --column-size: calc(var(--product-size) * 0.5);
+  transition-delay: 0ms;
+  translate: 0 4.5rem;
+  margin-bottom: 4rem;
+  margin-right: 6rem;
+}
+
+.product {
+  width: var(--product-size);
+  transition: scale 500ms;
+  z-index: 1;
+}
+
+.product:hover {
+  scale: 1.4;
+  z-index: 30;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 1320px) {
+  .products:hover {
+    --column-size: calc(var(--product-size) * 0.4);
+  }
+}
+
+@media (max-width: 1190px) {
+  .products:hover {
+    --column-size: calc(var(--product-size) * 0.3);
+  }
+}
+
+@supports selector(:has(+ *)) {
+  .product:hover + .product,
+  .product:has(+ .product:hover) {
+    scale: 1.2;
+    z-index: 20;
+  }
+}
