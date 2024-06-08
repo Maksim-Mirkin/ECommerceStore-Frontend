@@ -21,6 +21,22 @@ interface UserDataForm {
   userImage: string;
 }
 
+/**
+ * `UserData` Component
+ * Provides a user interface for authenticated users to view and update their personal information,
+ * including username, email, and user avatar. It also allows users to change their password via a dialog.
+ *
+ * Features:
+ * - Displays current user data with editable fields for username, email, and user image.
+ * - Utilizes `react-hook-form` for form validation and handling, enhancing user input experience by providing real-time feedback.
+ * - Offers a dialog form for password change, implementing additional security checks and confirmation patterns.
+ * - Uses `AuthContext` to access and modify the user's authentication status and details.
+ * - Incorporates `Dialogs` for confirmation and feedback, ensuring users are informed of the outcome of their actions.
+ * - Interacts with backend services through the `Auth` service to update user details and password securely.
+ * - Handles form submissions with detailed asynchronous operations, including pre-submission confirmations and post-submission actions like logging out or re-authenticating.
+ * - Responsive design adapts to different device sizes, providing a consistent user experience across platforms.
+ */
+
 const UserData = () => {
   const { user, logout } = useContext(AuthContext);
 

@@ -10,6 +10,21 @@ type DemoProductProps = {
   averageRating: number;
 };
 
+/**
+ * `DemoProduct` Component
+ * A component for displaying a product in a card format with interactive elements.
+ * This component is typically used to show a product preview in various parts of an application,
+ * especially in scenarios where products need to be showcased or highlighted.
+ *
+ * Features:
+ * - Displays the product image, name, and price prominently.
+ * - Shows the average rating of the product using star icons.
+ * - Includes buttons for adding the product to the shopping cart and for immediate purchase.
+ * - Utilizes the `Card` component to standardize the appearance across different parts of the application.
+ * - The component is designed to be static and does not handle any interactive functionality directly,
+ *   making it suitable for demonstration purposes or static displays in user interfaces.
+ */
+
 const DemoProduct = ({
   name,
   price,

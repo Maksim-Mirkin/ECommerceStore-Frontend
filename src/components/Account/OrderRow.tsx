@@ -8,6 +8,20 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { Dialogs } from "../../ui/dialogs";
 import { OrderStatusForm, generateRandomId, statusColor } from ".";
 
+/**
+ * `OrderRow` Component
+ * Displays a list of orders as rows, each containing detailed information and actions. This component is specifically used within the admin interface to manage orders and their statuses.
+ *
+ * Features:
+ * - Lists all orders with details such as Order ID, Address, City, Postal Code, Payment Information, Total Price, Status, and Date of creation.
+ * - Provides an interactive icon for navigating to detailed views of each order.
+ * - Integrates `OrderStatusForm` for admins to update the status of orders directly from the list if viewing the 'all-orders' path.
+ * - Utilizes context from `AuthContext` to determine if the user has admin privileges.
+ * - Responsive design hides this component on smaller screens, making it visible only in medium to larger viewports.
+ * - Includes dynamic coloring based on the status of each order to enhance visual feedback.
+ * - Incorporates error handling and success notifications when status updates are performed.
+ */
+
 const OrderRow = ({ orders, navigateToOrder }: OrderList) => {
   const { isAdmin } = useContext(AuthContext);
   const nav = useNavigate();

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CartItem as CartItemProps, Product } from "../../../@types/types";
+import { CartItem, Product } from "../../../@types/types";
 
 import { ProductService } from "../../../services";
 import { CiCircleRemove } from "react-icons/ci";
@@ -7,7 +7,15 @@ import Quantity from "../Quantity";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../../hooks";
 
-const CartItem = ({ id, quantity }: CartItemProps) => {
+/**
+ * DrawerItem component displays a product in the shopping cart drawer.
+ * It includes functionality to navigate to the product detail page,
+ * and to increase, decrease, or remove a product from the cart.
+ *
+ * @param id The unique identifier for the product
+ * @param quantity The quantity of the product in the cart
+ */
+const DrawerItem = ({ id, quantity }: CartItem) => {
   const { removeItem, decreaseItemQuantity, increaseItemQuantity } =
     useShoppingCart();
   const [item, setItem] = useState<Product | null>(null);
@@ -85,4 +93,4 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
   );
 };
 
-export default CartItem;
+export default DrawerItem;

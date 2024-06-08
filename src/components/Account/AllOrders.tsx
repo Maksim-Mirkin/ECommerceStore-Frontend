@@ -14,6 +14,22 @@ import { splitSortingCriteria } from "../../utils/formatUtils";
 import { sortInputs } from ".";
 import { SortDrawer } from "..";
 
+/**
+ * `AllOrders` Component
+ * Serves as an admin interface for viewing and managing all customer orders within the system.
+ * This component provides functionality to navigate through orders, sort them, and access detailed views for each order.
+ * It leverages the AuthContext to ensure that only users with admin privileges can access this administrative view.
+ * Additionally, it includes pagination controls, a sorting mechanism through a sort drawer, and error handling.
+ * The component also dynamically loads order data and displays them in both grid and row formats depending on the viewing preference.
+ * 
+ * Features:
+ * - Conditional rendering based on user permissions, allowing only admins to view the content.
+ * - Dynamic order fetching based on current page and sorting criteria, which updates via effects when these parameters change.
+ * - Integration of pagination to navigate through pages of orders and sorting options to customize the order display.
+ * - Utilization of a sort drawer for a more interactive and user-friendly sorting experience.
+ * - Responsive design that adjusts to different screen sizes and orientations, enhancing the user experience across devices.
+ * - Error handling to manage and display errors effectively when fetching data fails.
+ */
 
 const AllOrders = () => {
   const { isAdmin } = useContext(AuthContext);

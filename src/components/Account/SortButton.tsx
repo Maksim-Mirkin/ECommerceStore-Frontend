@@ -12,6 +12,20 @@ interface SortButtonProps {
   handleSortChange: (sortOption: string) => void;
 }
 
+/**
+ * `SortButton` Component
+ * Provides an interface for users to open sort options for lists or grids of items. It supports both a drawer for smaller screens and a dropdown menu for larger screens.
+ *
+ * Features:
+ * - Uses `MenuButton` for toggling the sort interface with an icon and text, enhancing the UI for both mobile and desktop views.
+ * - On smaller screens, it toggles a drawer component to select sort criteria.
+ * - On larger screens, it opens a dropdown menu (`SortMenu`) directly above the button to display available sorting options.
+ * - Integrates with `FaSort` icon from Font Awesome to visually indicate sorting functionality.
+ * - Handles opening and closing of sort interfaces through props, allowing for controlled component behavior.
+ * - Supports dynamic sorting by accepting sort options from a parent component and executing a callback when a sort option is selected.
+ * - Manages its own visibility and interaction state, making it versatile for various layout designs.
+ */
+
 const SortButton = ({
   toggleSortDrawer,
   handleMenuOpen,

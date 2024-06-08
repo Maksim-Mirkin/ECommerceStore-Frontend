@@ -7,6 +7,19 @@ interface PaginationControllerProps {
   totalPages: number;
 }
 
+/**
+ * `PaginationController` Component
+ * Provides a simple UI for navigating through paginated data, offering "Previous" and "Next" navigation options.
+ *
+ * Features:
+ * - Displays current page number and total pages, offering a clear indication of the pagination status.
+ * - Provides previous and next buttons to navigate between pages.
+ * - The previous button is disabled on the first page, and the next button is disabled on the last page, preventing out-of-bound navigation.
+ * - Utilizes Font Awesome icons for visually intuitive navigation controls.
+ * - Includes hover effects and transitions for better UI interaction feedback.
+ * - Applies conditional styling for disabled states to enhance user experience by indicating unavailable navigation options.
+ */
+
 const PaginationController = ({
   handlePrevPage,
   handleNextPage,

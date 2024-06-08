@@ -11,6 +11,23 @@ import { SortDrawer } from "..";
 import { sortInputs, SortButton, PaginationController } from ".";
 import { splitSortingCriteria } from "../../utils/formatUtils";
 
+/**
+ * `UserOrders` Component
+ * Provides a comprehensive interface for users to view and manage their orders. It supports pagination,
+ * sorting, and detailed views of each order. It leverages the OrderService to fetch and display orders
+ * based on user interactions such as sorting preferences and pagination controls.
+ *
+ * Features:
+ * - Displays a list of user orders with capabilities to sort by different criteria and navigate through paginated results.
+ * - Uses `useState` for managing local state like orders, loading status, and pagination.
+ * - Employs `useEffect` to fetch orders based on the current page and sorting criteria, updating the orders displayed as needed.
+ * - Includes responsive sorting and pagination controls that interact with the API to fetch data accordingly.
+ * - Implements error handling to display messages when data fetching fails.
+ * - Provides a detailed and interactive interface with expandable sections for each order and a mobile-responsive layout.
+ * - Integrates a sorting drawer (SortDrawer) for a customizable sorting experience, allowing the user to change sorting parameters dynamically.
+ * - Utilizes `useNavigate` for routing to detailed order views, enhancing user navigation and interaction within the application.
+ */
+
 const UserOrders = () => {
   const [orders, setOrders] = useState<OrderPage | null>(null);
   const [loading, setLoading] = useState(false);

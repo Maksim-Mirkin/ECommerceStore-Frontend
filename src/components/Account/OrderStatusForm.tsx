@@ -9,6 +9,19 @@ interface OrderStatusFormProps {
   onSubmit: (data: StatusRequest) => void;
 }
 
+/**
+ * `OrderStatusForm` Component
+ * Provides a form for updating the status of an order. It is primarily used within the admin interface to allow quick status changes directly from the order list view.
+ *
+ * Features:
+ * - Allows selection of a new status for an order from a dropdown menu.
+ * - Automatically submits the form upon status selection to immediately apply changes.
+ * - Stops propagation of click events to prevent triggering any parent element's onClick actions.
+ * - Uses `react-hook-form` for form handling with `onChange` mode for immediate feedback and controlled component behavior.
+ * - Dynamically sets the form's orderId to ensure the correct order is updated.
+ * - Supports status values from the `Status` enum, ensuring type safety and correctness.
+ */
+
 const OrderStatusForm = ({ orderId, onSubmit }: OrderStatusFormProps) => {
   const { handleSubmit, register, setValue } = useForm<StatusRequest>({
     mode: "onChange",

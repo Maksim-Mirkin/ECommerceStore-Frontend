@@ -7,6 +7,19 @@ import { Link } from "react-router-dom";
 import DrawerItem from "./DrawerItem";
 import { useShoppingCart } from "../../../hooks";
 
+/**
+ * ShoppingCart component provides a slide-in drawer that displays cart items.
+ * It allows users to view their selected items, update quantities, and proceed to checkout.
+ * It also calculates the total price of the items in the cart.
+ *
+ * Features:
+ * - Real-time cart updates: Changes in cart items trigger recalculation of the total price.
+ * - Responsive design: Uses a `Drawer` from `react-modern-drawer` to fit various screen sizes,
+ *   providing a consistent user experience across devices.
+ * - Efficient fetching: Retrieves product details only when the cart is open to minimize data fetching.
+ * - User interactions: Allows for closing the cart through a UI button and navigating to the checkout page.
+ */
+
 const ShoppingCart = () => {
   const { closeCart, cartItems, isCartOpen } = useShoppingCart();
   const [total, setTotal] = useState(0);

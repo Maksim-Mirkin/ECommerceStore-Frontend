@@ -2,6 +2,17 @@ import { useContext } from "react";
 import { AuthContext } from "../../contexts";
 import { useLocation } from "react-router-dom";
 
+/**
+ * `OrderHeader` Component
+ * Renders a header row for an order list, primarily used in administrative interfaces to display column titles for order attributes.
+ * It dynamically adjusts content based on the user's administrative status and the specific page being viewed.
+ *
+ * Features:
+ * - Displays headers for various order attributes like Order ID, Address, City, Postal Code, Payment Information, Total Price, Status, Date, and Order Items.
+ * - Conditionally renders an additional header for changing order status if the user is an administrator and is viewing the "all-orders" page.
+ * - The component is hidden on smaller screens and only visible in medium and larger viewports.
+ */
+
 const OrderHeader = () => {
   const { isAdmin } = useContext(AuthContext);
   const location = useLocation();

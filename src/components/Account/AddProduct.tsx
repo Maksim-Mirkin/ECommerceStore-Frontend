@@ -9,6 +9,24 @@ import { ProductService } from "../../services";
 import { ProductRequest } from "../../@types/types";
 import { isImageURL } from "../../utils/utils";
 import AutoExpandingTextarea from "../AutoExpandingTextarea";
+
+/**
+ * `AddProduct` Component
+ * This component provides an administrative interface for adding new products to the e-commerce platform.
+ * It allows users to input product details through a structured form, ensuring data integrity with validations.
+ * Upon submission, users are prompted to confirm their entries to prevent accidental additions.
+ * The form dynamically adjusts to user inputs, providing immediate feedback and validation errors to guide the user.
+ * Additionally, it features a live preview of the product using the entered details, enhancing the user experience by allowing visual confirmation of the product details before final submission.
+ * 
+ * Features:
+ * - Utilizes `react-hook-form` for form state management and validation, enhancing form performance by minimizing re-renders.
+ * - Dynamic input validation including real-time feedback on constraints like name length and price range.
+ * - Confirmation dialog integration before submission to verify user intentions and prevent errors.
+ * - Live product preview that updates as the user types, providing immediate visual feedback of the product details.
+ * - Custom utility functions like `preventSymbols` are used to restrict unwanted characters in numeric inputs, ensuring data cleanliness.
+ * - Responsive design that adjusts layout and elements based on the device's screen size, ensuring usability across different devices.
+ */
+
 const AddProduct = () => {
   const [imageURL, setImageURL] = React.useState<string>("");
   const [name, setName] = React.useState<string>("");

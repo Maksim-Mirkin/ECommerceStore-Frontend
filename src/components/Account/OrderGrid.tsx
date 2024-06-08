@@ -9,6 +9,19 @@ import { Dialogs } from "../../ui/dialogs";
 import OrderStatusForm from "./OrderStatusForm";
 import { generateRandomId, statusColor } from ".";
 
+/**
+ * `OrderGrid` Component
+ * Displays a grid view of orders, allowing administrative actions such as status updates. This component is specifically designed to handle and render a list of orders based on the user's permissions (admin/non-admin).
+ * It uses a `navigateToOrder` function to handle navigation to a detailed order view when an order is clicked.
+ *
+ * Features:
+ * - Renders each order with detailed information such as Order ID, Address, City, Postal Code, Payment Information, Total Price, Status, and Date.
+ * - Each order is a clickable element that can trigger navigation for further details.
+ * - For administrators, provides a form to update the status of an order directly from this grid.
+ * - Responsively hides in larger screens and is visible in mobile views.
+ * - Utilizes conditional rendering for administrative functions based on user roles and the specific page being viewed.
+ */
+
 const OrderGrid = ({ orders, navigateToOrder }: OrderList) => {
   const { isAdmin } = useContext(AuthContext);
   const nav = useNavigate();
