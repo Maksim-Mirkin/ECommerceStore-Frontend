@@ -134,10 +134,6 @@ export interface ProductFilterParams {
   category?: string[];
 }
 
-export interface OrderParams {
-  // Define order specific parameters if needed
-}
-
 export type User = {
   id: number;
   username: string;

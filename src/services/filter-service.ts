@@ -1,5 +1,5 @@
 import { baseUrl, buildProductFilterParams, ifLoggedInValidate } from ".";
-import { ProductFilterParams } from "../@types/types";
+import { ProductFilterOption, ProductFilterParams } from "../@types/types";
 
 const buildProductFilterOptionSearchUrl = (
   params: ProductFilterParams
@@ -10,7 +10,7 @@ const buildProductFilterOptionSearchUrl = (
 
 const fetchProductFilterOption = async (
   params: ProductFilterParams = {}
-): Promise<any> => {
+): Promise<ProductFilterOption> => {
   const token = ifLoggedInValidate();
 
   const url = buildProductFilterOptionSearchUrl(params);
