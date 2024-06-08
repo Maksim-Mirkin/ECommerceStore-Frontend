@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { CartItem as CartItemProps, Product } from "../../@types/types";
-import { useShoppingCart } from "../../contexts";
+
 import { ProductService } from "../../services";
 import { CiCircleRemove } from "react-icons/ci";
 import Quantity from "./Quantity";
 import { useNavigate } from "react-router-dom";
+import { useShoppingCart } from "../../hooks";
 
 const CartItem = ({ id, quantity }: CartItemProps) => {
   const { removeItem, decreaseItemQuantity, increaseItemQuantity } =

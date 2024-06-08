@@ -138,7 +138,7 @@ const UserData = () => {
         <InputField
           pattern={{
             message: "Email must be valid",
-            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+            value: /^[\w.]+@([\w-]+\.)+[\w-]{2,4}$/,
           }}
           register={register}
           errors={errors}
@@ -219,7 +219,11 @@ const UserData = () => {
           />
         </DialogContent>
         <DialogActions className="flex justify-center">
-          <button className="action-button" onClick={handleCloseDialog} type="button">
+          <button
+            className="action-button"
+            onClick={handleCloseDialog}
+            type="button"
+          >
             Cancel
           </button>
           <button className="action-button" type="submit">

@@ -1,15 +1,13 @@
 import { FaSearch, FaUser } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-import ThemeToggle from "./ThemeToggle";
+
 import HeaderButton from "./HeaderButton";
 import { useContext, useState, MouseEvent } from "react";
-import {
-  AuthContext,
-  DarkModeThemeContext,
-  useShoppingCart,
-} from "../../contexts";
+import { AuthContext, DarkModeThemeContext } from "../../contexts";
 import { Dialogs } from "../../ui/dialogs";
 import UserMenu from "./UserMenu";
+import { ThemeToggle } from "./ThemeToggle";
+import { useShoppingCart } from "../../hooks";
 
 interface IconBoxProps {
   onClick?: () => void;

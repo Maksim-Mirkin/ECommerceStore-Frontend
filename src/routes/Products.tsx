@@ -78,7 +78,7 @@ const Products = () => {
     setFilterCriteria(updatedFilterCriteria);
   };
 
-  const handleError = (e: any) => {
+  const handleError = (e: unknown) => {
     if (e instanceof Error) {
       setError(e.message);
     }

@@ -1,12 +1,13 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { OrderItem } from "../components/Order";
-import { useShoppingCart } from "../contexts";
+
 import { Dialogs } from "../ui/dialogs";
 
 import { useEffect, useState } from "react";
 import { OrderService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { InputField } from "../components";
+import { useShoppingCart } from "../hooks";
 
 type OrderSubmitProps = {
   address: string;

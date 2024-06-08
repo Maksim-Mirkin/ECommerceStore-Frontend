@@ -6,9 +6,10 @@ import { IoCartOutline } from "react-icons/io5";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { Rating } from "@mui/material";
 import { GridCell, AdminPanel } from "../components/Product";
-import { AuthContext, useShoppingCart } from "../contexts";
+import { AuthContext } from "../contexts";
 import { Dialogs } from "../ui/dialogs";
 import { AccentText } from "../components";
+import { useShoppingCart } from "../hooks";
 
 const Product = () => {
   const { id } = useParams();

@@ -1,4 +1,4 @@
-export type FC<P = {}> = (props: P & { children?: ReactNode }) => ReactNode;
+export type FC<P = object> = (props: P & { children?: ReactNode }) => ReactNode;
 
 export interface Theme {
   isDark: boolean;

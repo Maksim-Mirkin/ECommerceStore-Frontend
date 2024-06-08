@@ -86,7 +86,7 @@ const Register = () => {
         <InputField
           pattern={{
             message: "Email must be valid",
-            value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+            value: /^[\w.]+@([\w-]+\.)+[\w-]{2,4}$/,
           }}
           register={register}
           errors={errors}

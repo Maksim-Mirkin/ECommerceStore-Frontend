@@ -3,8 +3,9 @@ import Card from "./Card";
 import { IoCartOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useShoppingCart } from "../contexts";
+
 import { Dialogs } from "../ui/dialogs";
+import { useShoppingCart } from "../hooks";
 
 const ProductItem = ({ id, name, price, image, averageRating }: Product) => {
   const nav = useNavigate();

@@ -1,7 +1,9 @@
 import { baseUrl, buildProductFilterParams, ifLoggedInValidate } from ".";
 import { ProductFilterParams } from "../@types/types";
 
-const buildProductFilterOptionSearchUrl = (params: ProductFilterParams): string => {
+const buildProductFilterOptionSearchUrl = (
+  params: ProductFilterParams
+): string => {
   const productFilterParams = buildProductFilterParams(params);
   return `${baseUrl}/filter/products?${productFilterParams}`;
 };
@@ -23,7 +25,7 @@ const fetchProductFilterOption = async (
   const json = await res.json();
 
   if (!res.ok) {
-    throw new Error(json.message || "Failed to fetch products filter options");
+    throw json;
   }
 
   return json;

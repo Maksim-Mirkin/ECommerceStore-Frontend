@@ -56,7 +56,7 @@ const AutoExpandingTextarea = <T extends FieldValues>({
     if (textareaRef.current) {
       adjustHeight(textareaRef.current);
     }
-  }, [textareaRef.current]);
+  }, []);
 
   return (
     <div className="flex flex-col w-full md:min-h-80 items-center px-4 mb-4">

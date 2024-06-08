@@ -1,10 +1,11 @@
 import Drawer from "react-modern-drawer";
-import { useShoppingCart } from "../../../contexts";
+
 import { IoMdClose } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { ProductService } from "../../../services";
 import { Link } from "react-router-dom";
 import DrawerItem from "./DrawerItem";
+import { useShoppingCart } from "../../../hooks";
 
 const ShoppingCart = () => {
   const { closeCart, cartItems, isCartOpen } = useShoppingCart();

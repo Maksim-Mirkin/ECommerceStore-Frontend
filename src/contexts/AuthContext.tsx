@@ -5,7 +5,7 @@ import { Auth } from "../services";
 const initialValues: AuthContextType = {
   isLoggedIn: false,
   jwt: "",
-  login: (_) => {},
+  login: () => {},
   logout: () => {},
   user: null,
   isAdmin: false,

@@ -17,7 +17,7 @@ const Login = () => {
     if (isLoggedIn) {
       nav("/");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, nav]);
 
   const {
     register,

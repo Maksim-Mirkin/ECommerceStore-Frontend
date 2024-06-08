@@ -1,10 +1,11 @@
 import { CiLock } from "react-icons/ci";
 import { CartItem } from "../components/Cart";
-import { useShoppingCart } from "../contexts";
+
 import { Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ProductService } from "../services";
 import { Dialogs } from "../ui/dialogs";
+import { useShoppingCart } from "../hooks";
 
 const Cart = () => {
   const { cartItems } = useShoppingCart();

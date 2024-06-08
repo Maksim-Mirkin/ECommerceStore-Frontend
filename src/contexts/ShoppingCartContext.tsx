@@ -1,7 +1,6 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 import { CartItem, FC } from "../@types/types";
 import { useLocalStorage } from "../hooks";
-
 
 type ShoppingCartContextType = {
   openCart: () => void;
@@ -18,17 +17,13 @@ type ShoppingCartContextType = {
 const initialValues: ShoppingCartContextType = {
   openCart: () => {},
   closeCart: () => {},
-  getItemQuantity: (_) => 0,
-  increaseItemQuantity: (_) => {},
-  decreaseItemQuantity: (_) => {},
-  removeItem: (_) => {},
+  getItemQuantity: () => 0,
+  increaseItemQuantity: () => {},
+  decreaseItemQuantity: () => {},
+  removeItem: () => {},
   cartQuantity: 0,
   cartItems: [],
   isCartOpen: false,
-};
-
-export const useShoppingCart = () => {
-  return useContext(ShoppingCartContext);
 };
 
 export const ShoppingCartContext =

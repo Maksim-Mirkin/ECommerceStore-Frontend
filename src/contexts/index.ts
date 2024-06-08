@@ -1,5 +1,14 @@
 import { AuthContextProvider, AuthContext } from "./AuthContext";
-import { DarkModeThemeProvider, DarkModeThemeContext } from "./DarkModeThemeContext";
-import { ShoppingCartContextProvider, useShoppingCart } from "./ShoppingCartContext";
+import {
+  DarkModeThemeProvider,
+  DarkModeThemeContext,
+} from "./DarkModeThemeContext";
+import { ShoppingCartContextProvider } from "./ShoppingCartContext";
 
-export { DarkModeThemeProvider, AuthContextProvider, AuthContext, DarkModeThemeContext, ShoppingCartContextProvider, useShoppingCart };
+export {
+  DarkModeThemeProvider,
+  AuthContextProvider,
+  AuthContext,
+  DarkModeThemeContext,
+  ShoppingCartContextProvider,
+};
