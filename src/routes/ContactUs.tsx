@@ -60,11 +60,16 @@ const ContactUs = () => {
       <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-row sm:justify-evenly sm:w-full my-8">
         <Link
           to="https://www.linkedin.com/in/maksim-mirkin/"
+          target="_blank"
           aria-label="LinkedIn"
         >
           <img src={LinkedInIcon} alt="LinkedIn icon" className="h-24" />
         </Link>
-        <Link to="https://github.com/Maksim-Mirkin" aria-label="GitHub">
+        <Link
+          to="https://github.com/Maksim-Mirkin"
+          target="_blank"
+          aria-label="GitHub"
+        >
           <img
             src={GithubIcon}
             alt="GitHub icon"
@@ -76,10 +81,14 @@ const ContactUs = () => {
             className="h-24 hidden dark:block"
           />
         </Link>
-        <Link to="https://www.instagram.com/" aria-label="Instagram">
+        <Link
+          to="https://www.instagram.com/"
+          target="_blank"
+          aria-label="Instagram"
+        >
           <img src={InstagramIcon} alt="Instagram icon" className="h-24" />
         </Link>
-        <Link to="https://twitter.com/" aria-label="Twitter">
+        <Link to="https://twitter.com/" target="_blank" aria-label="Twitter">
           <img
             src={XTwitterIcon}
             alt="Twitter icon"
