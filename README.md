@@ -4,11 +4,14 @@
 
 ## Table of Contetns
 
+- [Table of Contetns](#table-of-contetns)
 - [About The App](#about-the-app)
 - [Features](#features)
+  - [For Shoppers](#for-shoppers)
+  - [For Admins](#for-admins)
 - [Technologies](#technologies)
 - [Setup](#setup)
-- [Screenshots](#screenshots)
+- [Demo](#demo)
 - [License](#license)
 
 ## About The App
@@ -67,17 +70,16 @@ Start the app with:
 npm run dev
 ```
 
-## Screenshots
-<img src="/demo/demo1.gif" width="2940" height="1600"/>
-<img src="/demo/demo2.gif" width="2940" height="1600"/>
-<img src="/demo/demo3.gif" width="2940" height="1600"/>
-<img src="/demo/demo4.gif" width="2940" height="1600"/>
-<img src="/demo/demo5.gif" width="2940" height="1600"/>
-<img src="/demo/demo6.gif" width="2940" height="1600"/>
-<img src="/demo/screenshot1.png.gif" width="2940" height="1600"/>
-<img src="/demo/screenshot2.png.gif" width="2940" height="1600"/>
-<img src="/demo/screenshot3.png.gif" width="2940" height="1600"/>
-
+## Demo
+![demo1](/demo/demo1.gif)
+![demo2](/demo/demo2.gif)
+![demo3](/demo/demo3.gif)
+![demo4](/demo/demo4.gif)
+![demo5](/demo/demo5.gif)
+![demo6](/demo/demo6.gif)
+![screenshot1](/demo/screenshot1.png)
+![screenshot2](/demo/screenshot2.png)
+![screenshot3](/demo/screenshot3.png)
 
 ## License
 
