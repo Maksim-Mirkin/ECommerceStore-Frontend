@@ -51,7 +51,10 @@ const InputField = <T extends FieldValues>({
       value: rest.maxLength ?? MAX,
       message: `Maximum length is ${rest.maxLength ?? MAX}`,
     },
-    pattern: { value: pattern, message: `Invalid ${name}` },
+    pattern: pattern ? {
+      value: pattern.value,
+      message: pattern.message ?? `Invalid format for ${name}`,
+    } : undefined,
   });
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {

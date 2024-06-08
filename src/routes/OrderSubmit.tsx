@@ -117,23 +117,41 @@ const OrderSubmit = () => {
           onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className="text-center mb-4">Order Details</h2>
-          <InputField register={register} errors={errors} name="address" />
-          <InputField register={register} errors={errors} name="city" />
+          <InputField
+            register={register}
+            errors={errors}
+            name="address"
+            required
+          />
+          <InputField
+            register={register}
+            errors={errors}
+            name="city"
+            required
+          />
           <InputField
             register={register}
             errors={errors}
             name="phoneNumber"
             type="number"
-            pattern={/^05\d{8}$/gm}
+            pattern={{
+              value: /^05\d{8}$/gm,
+              message: "Phone number must be 10 digits and start with 05",
+            }}
             onKeyDown={preventSymbols}
+            required
           />
           <InputField
             register={register}
             errors={errors}
             name="postalCode"
             type="number"
-            pattern={/^\d{7}$/gm}
+            pattern={{
+              value: /^\d{7}$/gm,
+              message: "Postal code must be 7 digits",
+            }}
             onKeyDown={preventSymbols}
+            required
           />
           <div className="px-4 w-full mb-4">
             <label htmlFor="paymentInformation">Payment Information</label>
