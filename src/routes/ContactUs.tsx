@@ -10,6 +10,7 @@ import {
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Dialogs } from "../ui/dialogs";
 import { InputField, AutoExpandingTextarea } from "../components";
+import { preventSymbols } from "../utils/inputUtils";
 
 type ContactUsProps = {
   name: string;
@@ -32,12 +33,14 @@ const ContactUs = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactUsProps>({
     mode: "onBlur",
   });
 
   const onSubmit: SubmitHandler<ContactUsProps> = () => {
+    reset();
     Dialogs.success(
       "Your message has been sent successfully! We will get back to you soon."
     );
@@ -110,6 +113,8 @@ const ContactUs = () => {
               name="phone"
               placeholder="Phone"
               type="text"
+              pattern={/^05\d{8}$/gm}
+              onKeyDown={preventSymbols}
             />
           </div>
           <InputField

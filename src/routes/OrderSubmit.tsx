@@ -6,6 +6,7 @@ import { OrderService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { InputField } from "../components";
 import { useShoppingCart } from "../hooks";
+import { preventSymbols } from "../utils/inputUtils";
 
 type OrderSubmitProps = {
   address: string;
@@ -124,6 +125,7 @@ const OrderSubmit = () => {
             name="phoneNumber"
             type="number"
             pattern={/^05\d{8}$/gm}
+            onKeyDown={preventSymbols}
           />
           <InputField
             register={register}
@@ -131,6 +133,7 @@ const OrderSubmit = () => {
             name="postalCode"
             type="number"
             pattern={/^\d{7}$/gm}
+            onKeyDown={preventSymbols}
           />
           <div className="px-4 w-full mb-4">
             <label htmlFor="paymentInformation">Payment Information</label>
