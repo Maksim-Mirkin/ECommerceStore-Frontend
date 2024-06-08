@@ -35,8 +35,7 @@ const SortDrawer = ({
       open={isOpen}
       onClose={toggleDrawer}
       direction="bottom"
-      size={"235px"}
-      className="bg-slate-100 dark:bg-slate-600"
+      className="bg-slate-100 dark:bg-slate-600 h-fit"
       lockBackgroundScroll
     >
       <form className="mx-1 flex flex-col items-center" onSubmit={handleSubmit}>

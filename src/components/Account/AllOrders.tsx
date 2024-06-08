@@ -12,7 +12,8 @@ import SortButton from "./SortButton";
 import PaginationController from "./PaginationController";
 import { splitSortingCriteria } from "../../utils/formatUtils";
 import { sortInputs } from ".";
-import SortDrawer from "../SortDrawer";
+import { SortDrawer } from "..";
+
 
 const AllOrders = () => {
   const { isAdmin } = useContext(AuthContext);
