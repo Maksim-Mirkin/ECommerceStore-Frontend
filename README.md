@@ -1,4 +1,4 @@
-<h1 align='center'>E-Commerce Store</h1>
+# E-Commerce Store
 
 ![App Logo](public/assets/logo.png)
 
