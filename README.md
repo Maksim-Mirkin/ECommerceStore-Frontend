@@ -45,11 +45,39 @@ Built on a robust platform with a proprietary [E-Commrece backend API](https://g
 
 ## Setup
 
-how to install
+Ensure that you have at least [Node.JS](https://nodejs.org/en) version 18.0.0 installed.
+
+Ensure that the backend is operational. See the setup instructions for the [ECommerceStore-backend](https://github.com/Maksim-Mirkin/ECommerceStore-backend).
+
+Clone the repository with the following command:
+
+```bash
+git clone https://github.com/Maksim-Mirkin/ECommerceStore-Frontend.git
+```
+
+Install all dependencies by running:
+
+```bash
+npm install
+```
+
+Start the app with:
+
+```bash
+npm run dev
+```
 
 ## Screenshots
+<img src="/demo/demo1.gif" width="2940" height="1600"/>
+<img src="/demo/demo2.gif" width="2940" height="1600"/>
+<img src="/demo/demo3.gif" width="2940" height="1600"/>
+<img src="/demo/demo4.gif" width="2940" height="1600"/>
+<img src="/demo/demo5.gif" width="2940" height="1600"/>
+<img src="/demo/demo6.gif" width="2940" height="1600"/>
+<img src="/demo/screenshot1.png.gif" width="2940" height="1600"/>
+<img src="/demo/screenshot2.png.gif" width="2940" height="1600"/>
+<img src="/demo/screenshot3.png.gif" width="2940" height="1600"/>
 
-demo
 
 ## License
 
