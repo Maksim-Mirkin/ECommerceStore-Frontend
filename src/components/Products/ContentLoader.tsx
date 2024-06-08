@@ -1,3 +1,11 @@
+/**
+ * ContentLoader Component
+ * Renders a set of placeholder items to indicate loading state.
+ *
+ * Features:
+ * - Displays multiple animated placeholder items with specified dimensions and styles.
+ * - Uses Tailwind CSS classes for styling and animation.
+ */
 const ContentLoader = () => {
   const LoaderItem = () => (
     <div className="w-64 h-96 sm:w-80 sm:h-[26.25rem] bg-gray-300 rounded-3xl animate-pulse" />

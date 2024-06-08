@@ -12,6 +12,28 @@ interface SearchBarProps {
   onClick?: () => void;
 }
 
+/**
+ * SearchBar Component
+ * This component renders a search bar for searching products by name.
+ *
+ * Props:
+ * - display: string - CSS class for controlling the display of the search bar.
+ * - height: string - CSS class for setting the height of the search bar.
+ * - width: string - CSS class for setting the width of the search bar.
+ * - rounded: string (optional) - CSS class for setting the border radius of the search bar.
+ * - onClick: function (optional) - Function to be called when the close button is clicked.
+ *
+ * State:
+ * - search: string - The current value of the search input field.
+ *
+ * The component includes an input field for entering the search query and two buttons:
+ * - A search button with a search icon, which submits the search query.
+ * - A close button with a close icon, which triggers the onClick function passed as a prop.
+ *
+ * The handleSearch function handles form submission, navigates to the search results page,
+ * and resets the search input field.
+ */
+
 const SearchBar = ({
   display,
   height,

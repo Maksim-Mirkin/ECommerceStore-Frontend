@@ -15,6 +15,26 @@ interface FilterDrawerProps {
   updateFilterCriteria: (filterCriteria: ProductParams) => void;
 }
 
+/**
+ * FilterDrawer Component
+ * Renders a drawer containing various product filters, including price range and other attributes.
+ * Utilizes react-modern-drawer for drawer functionality and integrates with a filter service to fetch filter options.
+ *
+ * Props:
+ * - isOpen (boolean): Indicates whether the drawer is open.
+ * - toggleDrawer (function): Function to toggle the drawer's open state.
+ * - lastPath (string): The last path in the URL, used to determine the category for filtering.
+ * - filterCriteria (ProductParams): The current filter criteria.
+ * - updateFilterCriteria (function): Function to update the filter criteria.
+ *
+ * Features:
+ * - Fetches filter options from the FilterService based on the current category and filter criteria.
+ * - Renders filter sections for various product attributes (e.g., brand, color, memory, etc.).
+ * - Provides a price range slider for filtering products by price.
+ * - Handles changes to filter criteria and updates the state accordingly.
+ * - Displays loading and error states while fetching filter options.
+ */
+
 const FilterDrawer = ({
   isOpen,
   toggleDrawer,

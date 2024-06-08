@@ -5,6 +5,17 @@ import { AuthContext } from "../contexts";
 import { IoBagAdd } from "react-icons/io5";
 import { LoadingNavLinks } from "../components/Account";
 
+/**
+ * Account Route
+ * Provides a user-specific interface for accessing personal data, order history, and administrative tasks
+ * if the user has admin privileges. It dynamically adjusts navigation options based on user roles and authentication status.
+ *
+ * Features:
+ * - Navigation links for personal data, recent orders, all orders (admin only), and product addition (admin only).
+ * - Uses NavLink for routing with active state styles to highlight the current page.
+ * - Deploys React Router's Outlet to render nested routes within the account section.
+ * - Displays a loading component if user details are not yet available.
+ */
 const Account = () => {
   const { user, isAdmin } = useContext(AuthContext);
 

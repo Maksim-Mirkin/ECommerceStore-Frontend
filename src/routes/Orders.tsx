@@ -7,6 +7,17 @@ import { Controller, useForm } from "react-hook-form";
 import { RatingService } from "../services";
 import { Dialogs } from "../ui/dialogs";
 
+/**
+ * Orders Route
+ * Displays details for a specific order, allowing users to view and rate individual products within the order.
+ * Utilizes navigation and location hooks from React Router to manage routing and state transitions.
+ *
+ * Features include:
+ * - Displaying order details such as product images, names, quantities, and subtotals.
+ * - Integrating a rating system for products within the order, where users can submit new ratings or update existing ones.
+ * - Handling user interactions with confirm dialogs and displaying success or error messages accordingly.
+ * - Using the RatingService to post or update product ratings and fetch existing ratings.
+ */
 const Orders = () => {
   const location = useLocation();
   const nav = useNavigate();

@@ -11,6 +11,22 @@ interface SortDrawerProps {
   sortInputs: SortInput[];
 }
 
+/**
+ * SortDrawer Component
+ * A bottom drawer component that allows users to select sorting criteria for a list of items.
+ *
+ * Props:
+ * - isOpen (boolean): Controls whether the drawer is open or closed.
+ * - toggleDrawer (function): Function to toggle the drawer's open state.
+ * - onSortChange (function): Callback function to handle changes in the sorting criteria.
+ * - sortInputs (SortInput[]): An array of sorting options, each with an id and label.
+ *
+ * Features:
+ * - Displays sorting options as radio buttons within a bottom drawer.
+ * - Allows users to select a sorting option and submit the selection to apply the sort.
+ * - Provides a close button to dismiss the drawer.
+ * - Uses `react-modern-drawer` for the drawer functionality and styling.
+ */
 const SortDrawer = ({
   isOpen,
   toggleDrawer,

@@ -7,7 +7,6 @@ import {
   capitalizeFirstLetter,
   splitSortingCriteria,
 } from "../utils/formatUtils";
-
 import { FaFilter, FaSort } from "react-icons/fa";
 import {
   FilterDrawer,
@@ -32,6 +31,18 @@ const getDefaultFilterCriteria = (
   category: lastPath === "search" ? [""] : [lastPath],
 });
 
+/**
+ * Products Route
+ * Displays a list of products with infinite scrolling, sorting, and filtering functionalities.
+ *
+ * Implements an infinite scroll mechanism to load products as the user scrolls, enhancing performance
+ * and user experience on large datasets. Users can sort and filter products based on various criteria,
+ * including price, category, and more.
+ *
+ * Uses React Router's `useLocation` to determine the current path for category-based filtering and
+ * `useSearchParams` for URL-based state management. Error handling and state updates are managed within
+ * the component to maintain a responsive and interactive user interface.
+ */
 const Products = () => {
   const location = useLocation();
   const path = location.pathname;

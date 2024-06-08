@@ -1,12 +1,23 @@
 import { CiLock } from "react-icons/ci";
 import { CartItem } from "../components/Cart";
-
 import { Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ProductService } from "../services";
 import { Dialogs } from "../ui/dialogs";
 import { useShoppingCart } from "../hooks";
 
+/**
+ * Cart Route
+ * Manages and displays the shopping cart contents, including product details, quantity adjustments, and subtotal calculations.
+ * Provides a secure checkout link and handles user redirection if the cart is empty. Utilizes dynamic subtotal calculations
+ * based on cart contents and real-time price fetching from the ProductService.
+ *
+ * Features:
+ * - Displays each cart item with options for viewing detailed product info and adjusting quantities.
+ * - Calculates subtotals dynamically based on product prices and quantities, with added delivery charges.
+ * - Secure payment prompt with a link to the checkout process.
+ * - Utilizes dialog boxes for user notifications if the cart is empty and redirects to the login page.
+ */
 const Cart = () => {
   const { cartItems } = useShoppingCart();
   const [subtotal, setSubtotal] = useState(0);
@@ -27,7 +38,9 @@ const Cart = () => {
     calculateTotal();
   }, [cartItems]);
   if (cartItems.length === 0) {
-    Dialogs.warning("Your cart is empty. Please add some items to continue shopping.");
+    Dialogs.warning(
+      "Your cart is empty. Please add some items to continue shopping."
+    );
     return <Navigate to="/login" replace />;
   }
   return (

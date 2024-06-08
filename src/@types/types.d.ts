@@ -1,10 +1,19 @@
+/**
+ * Basic React component type with optional children.
+ */
 export type FC<P = object> = (props: P & { children?: ReactNode }) => ReactNode;
 
+/**
+ * Represents theme settings for the application.
+ */
 export interface Theme {
   isDark: boolean;
   toggleTheme: () => void;
 }
 
+/**
+ * Type for properties of an input field, with integration of react-hook-form.
+ */
 export type InputFieldProps<T extends FieldValues> = {
   register: UseFormRegister<T>;
   errors: FieldErrors<T>;
@@ -12,6 +21,9 @@ export type InputFieldProps<T extends FieldValues> = {
   pattern?: ValidationRule<RegExp> | undefined;
 } & Omit<Omit<React.InputHTMLAttributes<HTMLInputElement>, "name">, "pattern">;
 
+/**
+ * Type for properties of a textarea that automatically expands as the user types.
+ */
 export type AutoExpandingTextareaProps<T extends FieldValues> = {
   register: UseFormRegister<T>;
   errors: FieldErrors<T>;
@@ -21,6 +33,9 @@ export type AutoExpandingTextareaProps<T extends FieldValues> = {
   "pattern"
 >;
 
+/**
+ * Authentication context type for managing user authentication states.
+ */
 export interface AuthContextType {
   isLoggedIn: boolean;
   jwt?: string | null;
@@ -30,10 +45,14 @@ export interface AuthContextType {
   isAdmin: boolean;
 }
 
+/**
+ * Type definitions for user requests and user data.
+ */
 export type RegisterRequest = {
   username: string;
   email: string;
   password: string;
+  confirmPassword: string;
 };
 
 export type LoginRequest = {
@@ -41,6 +60,31 @@ export type LoginRequest = {
   password: string;
 };
 
+export type User = {
+  id: number;
+  username: string;
+  email: string;
+  userImage: string;
+  roles: { id: number; roleName: string }[];
+};
+
+export type ChangePasswordRequest = {
+  username: string;
+  oldPassword: string;
+  newPassword: string;
+  confirmNewPassword: string;
+};
+
+export type UpdateUserDataRequest = {
+  oldUsername: string;
+  newUsername: string;
+  email: string;
+  userImage: string;
+};
+
+/**
+ * Product-related types and interfaces.
+ */
 export type Product = {
   id: number;
   name: string;
@@ -59,45 +103,19 @@ export type Product = {
   category: string;
 };
 
-export type Page = {
-  totalItems: number;
-  pageNumber: number;
-  pageSize: number;
-  totalPages: number;
-  isFirst: boolean;
-  isLast: boolean;
+export type ProductRequest = {
+  name: string;
+  price: number;
+  brand: string;
+  description: string;
+  image: string;
+  category: string;
+  memory: string;
+  screenSize: string;
+  batteryCapacity: string;
+  operatingSystem: string;
+  color: string;
 };
-
-export type OrderPage = Page & {
-  orders: Array<Order>;
-};
-
-export type ProductPage = Page & {
-  products: Array<Product>;
-};
-
-export type OrderSortByType = "id" | "createdAt" | "status" | "totalPrice";
-
-export type ProductSortByType =
-  | "id"
-  | "name"
-  | "price"
-  | "brand"
-  | "memory"
-  | "screenSize"
-  | "batteryCapacity"
-  | "operatingSystem"
-  | "color"
-  | "ratings";
-
-export type SortByType = ProductSortByType | OrderSortByType;
-
-export interface PaginationParams {
-  pageNumber?: number;
-  pageSize?: number;
-  sortDir?: "asc" | "desc";
-  sortBy?: SortByType;
-}
 
 export type ProductFilterOption = {
   brands: string[];
@@ -134,51 +152,52 @@ export interface ProductFilterParams {
   category?: string[];
 }
 
-export type User = {
-  id: number;
-  username: string;
-  email: string;
-  userImage: string;
-  roles: { id: number; roleName: string }[];
+export type ProductSortByType =
+  | "id"
+  | "name"
+  | "price"
+  | "brand"
+  | "memory"
+  | "screenSize"
+  | "batteryCapacity"
+  | "operatingSystem"
+  | "color"
+  | "ratings";
+
+/**
+ * Pagination and sorting types.
+ */
+export interface PaginationParams {
+  pageNumber?: number;
+  pageSize?: number;
+  sortDir?: "asc" | "desc";
+  sortBy?: SortByType;
+}
+
+export type Page = {
+  totalItems: number;
+  pageNumber: number;
+  pageSize: number;
+  totalPages: number;
+  isFirst: boolean;
+  isLast: boolean;
 };
 
-export type ChangePasswordRequest = {
-  username: string;
-  oldPassword: string;
-  newPassword: string;
-  confirmNewPassword: string;
+export type ProductPage = Page & {
+  products: Array<Product>;
 };
 
-export type UpdateUserDataRequest = {
-  oldUsername: string;
-  newUsername: string;
-  email: string;
-  userImage: string;
+export type OrderPage = Page & {
+  orders: Array<Order>;
 };
 
-export type ProductRequest = {
-  name: string;
-  price: number;
-  brand: string;
-  description: string;
-  image: string;
-  category: string;
-  memory: string;
-  screenSize: string;
-  batteryCapacity: string;
-  operatingSystem: string;
-  color: string;
-};
+export type SortByType = ProductSortByType | OrderSortByType;
 
-export type OrderRequest = {
-  orderItems: { productId: number; quantity: number }[];
-  address: string;
-  city: string;
-  postalCode: string;
-  phoneNumber: string;
-  paymentInformation: string;
-};
+export type OrderSortByType = "id" | "createdAt" | "status" | "totalPrice";
 
+/**
+ * Order and cart item definitions.
+ */
 export type Order = {
   id: number;
   customer: User;
@@ -206,6 +225,18 @@ export interface OrderList {
   navigateToOrder: (id: string, order: Order) => void;
 }
 
+export type OrderRequest = {
+  orderItems: { productId: number; quantity: number }[];
+  address: string;
+  city: string;
+  postalCode: string;
+  phoneNumber: string;
+  paymentInformation: string;
+};
+
+/**
+ * Miscellaneous request types.
+ */
 export type StatusRequest = {
   orderId: number;
   status: Status;
@@ -216,6 +247,9 @@ export type RatingRequest = {
   rating: string;
 };
 
+/**
+ * Type for sorting drawer and menu.
+ */
 export type SortInput = {
   id: string;
   label: string;

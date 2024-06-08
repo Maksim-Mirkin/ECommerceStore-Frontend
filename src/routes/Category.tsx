@@ -1,6 +1,17 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { CategoryLink } from "../components";
 
+/**
+ * Category Route
+ * Displays category links as a navigation gateway to various product categories,
+ * or renders nested routes depending on the path. This route acts as a central hub for 
+ * accessing different categories of products like laptops, cellulars, TVs, and headphones.
+ *
+ * Features:
+ * - Direct category links with images for a visually engaging navigation experience.
+ * - Uses conditional rendering to display category links or delegate rendering to nested routes.
+ * - Leverages React Router's `Outlet` to handle nested routes, facilitating detailed browsing within a selected category.
+ */
 const Category = () => {
   const location = useLocation();
   const isNestedRoute = location.pathname !== "/category";

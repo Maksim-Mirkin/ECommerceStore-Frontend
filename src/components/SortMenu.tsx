@@ -10,6 +10,22 @@ interface SortMenuProps {
   sortInputs: SortInput[];
 }
 
+/**
+ * SortMenu Component
+ * Renders a menu for selecting sorting criteria, utilizing Material-UI's Menu and MenuItem components.
+ *
+ * Props:
+ * - anchorEl (HTMLElement | null): The element to which the menu is anchored.
+ * - open (boolean): Controls whether the menu is open or closed.
+ * - onClose (function): Callback function to handle closing the menu.
+ * - onSortChange (function): Callback function to handle changes in the sorting criteria.
+ * - sortInputs (SortInput[]): An array of sorting options, each with an id and label.
+ *
+ * Features:
+ * - Displays sorting options as buttons within a Material-UI Menu.
+ * - Allows users to select a sorting option, updating the state and invoking the onSortChange callback.
+ * - Handles form submission to apply the selected sorting criteria and close the menu.
+ */
 const SortMenu = ({
   anchorEl,
   open,

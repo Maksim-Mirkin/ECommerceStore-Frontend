@@ -7,6 +7,28 @@ import Quantity from "./Quantity";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../hooks";
 
+/**
+ * CartItem Component
+ * This component represents an item in the shopping cart.
+ *
+ * Props:
+ * - `id`: The ID of the product.
+ * - `quantity`: The quantity of the product in the cart.
+ *
+ * Features:
+ * - Displays product information including name, image, category, quantity, price, and subtotal.
+ * - Allows the user to increase, decrease, or remove the quantity of the item from the cart.
+ * - Provides hover effects and transitions for a smooth user experience.
+ *
+ * Dependencies:
+ * - Requires the `ProductService` for fetching product details.
+ * - Utilizes the `Quantity` component for quantity control.
+ * - Relies on the `useShoppingCart` hook for managing cart operations.
+ *
+ * Accessibility:
+ * - Each button has an appropriate `aria-label` attribute.
+ */
+
 const CartItem = ({ id, quantity }: CartItemProps) => {
   const { removeItem, decreaseItemQuantity, increaseItemQuantity } =
     useShoppingCart();

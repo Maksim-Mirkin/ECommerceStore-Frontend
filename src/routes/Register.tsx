@@ -5,14 +5,19 @@ import { Dialogs } from "../ui/dialogs";
 import { Auth } from "../services";
 import { AuthContext } from "../contexts";
 import { Avatar, InputField } from "../components";
+import { RegisterRequest } from "../@types/types";
 
-export type RegisterRequest = {
-  username: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-};
-
+/**
+ * Register Route
+ * Handles user registration with form validation and navigation based on authentication status.
+ *
+ * Features:
+ * - Redirects authenticated users to the home page.
+ * - Provides form inputs for username, email, password, and password confirmation.
+ * - Validates user input and handles registration and login upon form submission.
+ * - Displays success or error messages via dialog boxes.
+ * - Navigates to the home page upon successful registration and login.
+ */
 const Register = () => {
   const { login, isLoggedIn } = useContext(AuthContext);
   const [image, setImage] = useState<string>("");

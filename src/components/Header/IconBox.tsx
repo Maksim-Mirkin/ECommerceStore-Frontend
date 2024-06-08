@@ -13,6 +13,34 @@ interface IconBoxProps {
   onClick?: () => void;
 }
 
+/**
+ * IconBox Component
+ * This component renders a set of icons used in the header of the application. 
+ * The icons include search, dark mode toggle, cart, and account buttons.
+ *
+ * Props:
+ * - onClick: An optional function that handles the click event for the search button on mobile.
+ *
+ * Contexts:
+ * - DarkModeThemeContext: Provides the toggleTheme function to switch between light and dark modes.
+ * - AuthContext: Provides the isLoggedIn state and logout function for user authentication.
+ * - useShoppingCart: Custom hook that provides functions to open the cart and the current cart quantity.
+ *
+ * State:
+ * - anchorMenuEl: Manages the anchor element for the user menu dropdown.
+ * - open: Boolean that indicates if the user menu dropdown is open.
+ *
+ * Functions:
+ * - handleClick: Opens the user menu dropdown.
+ * - handleClose: Closes the user menu dropdown.
+ * - handleLogout: Logs out the user and closes the user menu dropdown.
+ *
+ * Child Components:
+ * - HeaderButton: A reusable button component used for each icon.
+ * - ThemeToggle: A component that displays the current theme toggle icon.
+ * - UserMenu: A component that renders the user menu dropdown.
+ */
+
 const IconBox = ({ onClick }: IconBoxProps) => {
   const { toggleTheme } = useContext(DarkModeThemeContext);
   const { isLoggedIn, logout } = useContext(AuthContext);

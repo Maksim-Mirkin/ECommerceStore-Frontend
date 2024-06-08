@@ -7,6 +7,24 @@ import { useNavigate } from "react-router-dom";
 import { Dialogs } from "../ui/dialogs";
 import { useShoppingCart } from "../hooks";
 
+/**
+ * ProductItem Component
+ * Displays a product's details in a card format, including the product image, name, price, and average rating.
+ * Provides functionality for adding the product to the cart and buying it directly.
+ *
+ * Props:
+ * - id (number): The unique identifier for the product.
+ * - name (string): The name of the product.
+ * - price (number): The price of the product.
+ * - image (string): The URL of the product's image.
+ * - averageRating (string): The average rating of the product.
+ *
+ * Features:
+ * - Displays product information including image, name, price, and rating.
+ * - Includes buttons for adding the product to the cart and for buying the product immediately.
+ * - Uses the useShoppingCart hook to manage cart operations and Dialogs for user feedback.
+ * - Navigates to the product detail page when the card is clicked.
+ */
 const ProductItem = ({ id, name, price, image, averageRating }: Product) => {
   const nav = useNavigate();
   const { increaseItemQuantity } = useShoppingCart();

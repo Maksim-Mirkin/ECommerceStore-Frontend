@@ -7,9 +7,7 @@ import {
   XTwitterIcon,
   XTwitterWhiteIcon,
 } from "../ui/icons";
-
 import { useForm, SubmitHandler } from "react-hook-form";
-
 import { Dialogs } from "../ui/dialogs";
 import { InputField, AutoExpandingTextarea } from "../components";
 
@@ -20,6 +18,16 @@ type ContactUsProps = {
   message: string;
 };
 
+/**
+ * ContactUs Route
+ * Provides a user interface for visitors to send messages directly to the site's team.
+ * Includes form validation and submission handling with a success message upon submission.
+ *
+ * The route features:
+ * - A form for name, phone, email, and a message, with real-time validation.
+ * - Links to social media profiles including LinkedIn, GitHub, Instagram, and Twitter with appropriate icons.
+ * - Visual feedback on form submission success via dialog boxes.
+ */
 const ContactUs = () => {
   const {
     register,

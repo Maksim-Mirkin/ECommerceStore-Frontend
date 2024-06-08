@@ -3,6 +3,22 @@ import { AutoExpandingTextareaProps } from "../@types/types";
 import { FieldValues } from "react-hook-form";
 import { capitalizeFirstLetter } from "../utils/formatUtils";
 
+/**
+ * AutoExpandingTextarea Component
+ * Renders a textarea that automatically adjusts its height based on the content and provides validation feedback.
+ * Utilizes react-hook-form for form validation and state management.
+ *
+ * Props:
+ * - name (string): The name of the textarea field.
+ * - errors (object): Validation errors from react-hook-form.
+ * - register (function): The register function from react-hook-form for registering the textarea.
+ * - rest (object): Other props to be passed to the textarea element.
+ *
+ * Features:
+ * - Automatically adjusts the height of the textarea based on the content.
+ * - Displays validation error messages.
+ * - Shows a warning message when the maximum length is reached.
+ */
 const AutoExpandingTextarea = <T extends FieldValues>({
   name,
   errors,
@@ -86,7 +102,7 @@ const AutoExpandingTextarea = <T extends FieldValues>({
       {isWarningMessage && (
         <p
           className={`text-amber-500 h-0 my-4 transition-opacity duration-500 ease-in-out ${
-            isMaximumLength ? 'opacity-100' : 'opacity-0'
+            isMaximumLength ? "opacity-100" : "opacity-0"
           }`}
         >
           Maximum length reached!

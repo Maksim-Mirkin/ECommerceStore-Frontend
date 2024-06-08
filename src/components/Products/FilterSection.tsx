@@ -6,6 +6,19 @@ interface AccordionSectionProps {
   title: string;
 }
 
+/**
+ * FilterSection Component
+ * Renders an accordion-style section with a title that can be expanded or collapsed to show or hide its content.
+ *
+ * Props:
+ * - title (string): The title of the section.
+ * - children (React.ReactNode): The content to be displayed within the section.
+ *
+ * Features:
+ * - Displays a button with the section title, which toggles the visibility of the content when clicked.
+ * - Uses a ref to dynamically set the max height of the content area for smooth transition effects.
+ * - Applies Tailwind CSS classes for styling and transition effects.
+ */
 const FilterSection: FC<AccordionSectionProps> = ({ title, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);

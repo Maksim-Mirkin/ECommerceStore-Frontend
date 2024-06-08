@@ -5,6 +5,17 @@ interface MenuButtonProps {
   display: string;
   ariaLabel: string;
 }
+
+/**
+ * MenuButton Component
+ * Renders a button with customizable display properties, click handling, and accessibility label.
+ *
+ * Props:
+ * - onClick (function): Handler for click events.
+ * - display (string): CSS classes controlling the display properties of the button.
+ * - ariaLabel (string): Accessibility label for the button.
+ * - children (React.ReactNode): Elements to be rendered inside the button.
+ */
 const MenuButton: FC<MenuButtonProps> = ({
   children,
   onClick,

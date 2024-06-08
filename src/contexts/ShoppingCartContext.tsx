@@ -26,6 +26,29 @@ const initialValues: ShoppingCartContextType = {
   isCartOpen: false,
 };
 
+/**
+ * ShoppingCartContext
+ * Provides a context for managing and accessing the shopping cart's state throughout the application.
+ * This context allows components to interact with the cart's state, such as opening/closing the cart, 
+ * adjusting item quantities, and accessing cart items and quantities.
+ *
+ * ShoppingCartContextType defines the structure of the context's value, including:
+ * - Functions to open and close the cart.
+ * - Functions to get, increase, decrease, and remove item quantities.
+ * - The current quantity of items in the cart.
+ * - The array of cart items.
+ * - A boolean indicating if the cart is open.
+ *
+ * ShoppingCartContextProvider
+ * A provider component that encapsulates the ShoppingCartContext logic, using `useLocalStorage` to persist 
+ * the cart's state in the browser's localStorage. It initializes and manages the state related to the cart,
+ * providing it to the consuming components through the ShoppingCartContext.
+ *
+ * Features:
+ * - Persistent state management with localStorage integration.
+ * - Reduces cart-related state management redundancy across components.
+ * - Direct manipulation functions for cart operations, ensuring that cart state is centrally controlled and updated.
+ */
 export const ShoppingCartContext =
   createContext<ShoppingCartContextType>(initialValues);
 

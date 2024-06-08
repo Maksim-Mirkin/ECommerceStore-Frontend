@@ -4,6 +4,17 @@ import {
   useRouteError,
 } from "react-router-dom";
 
+/**
+ * NotFoundError Route
+ * Displays a custom 404 error page when a user navigates to a non-existent route.
+ * It leverages React Router's error handling capabilities to manage and display error details.
+ *
+ * Features:
+ * - Presents a friendly error message with a "404 - Not Found" status to inform users that the requested page is unavailable.
+ * - Optionally displays additional error details if available, enhancing user understanding of the error context.
+ * - Provides navigation buttons allowing users to return to the previous page or the homepage, aiding in error recovery.
+ * - Incorporates a visual element (sad robot image) to soften the impact of the error message.
+ */
 const NotFoundError = () => {
   const error = useRouteError();
   const nav = useNavigate();

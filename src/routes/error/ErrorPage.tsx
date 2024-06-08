@@ -4,6 +4,15 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+/**
+ * ErrorPage Route
+ * Displays an error page when navigation errors occur. This route uses the error boundary provided by React Router to handle errors gracefully.
+ *
+ * Features:
+ * - Retrieves and displays error messages based on the type of error encountered, whether it's a standard error, a string, or a structured HTTP error response.
+ * - Provides options to navigate back to the previous page or to the homepage for user convenience.
+ * - Uses a visual representation (sad robot image) to enhance the user interface during error display.
+ */
 const ErrorPage = () => {
   const error = useRouteError();
   const nav = useNavigate();

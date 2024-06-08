@@ -4,6 +4,16 @@ import {
   useNavigate,
 } from "react-router-dom";
 
+/**
+ * ProductError Route
+ * Displays an error page specifically for product-related issues, using React Router's error handling capabilities.
+ *
+ * Features:
+ * - Retrieves error details using `useRouteError` and formats messages based on the error type (e.g., standard errors, string messages, or HTTP response errors).
+ * - Provides a visual indication of an error state with a thematic "sad robot" image.
+ * - Offers user-friendly navigation options to go back to the previous page or return to the home page, aiding in recovery from the error.
+ * - Ensures users understand the nature of the error with a clear display of the error message.
+ */
 const ProductError = () => {
   const error = useRouteError();
   const nav = useNavigate();

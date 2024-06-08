@@ -4,6 +4,24 @@ import { InputFieldProps } from "../@types/types";
 import { capitalizeFirstLetter, splitCamelCase } from "../utils/formatUtils";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+/**
+ * InputField Component
+ * Renders an input field with optional password visibility toggle, error handling, and customizable props.
+ * Utilizes react-hook-form for form validation and state management.
+ *
+ * Props:
+ * - errors (object): Validation errors from react-hook-form.
+ * - name (string): The name of the input field.
+ * - register (function): The register function from react-hook-form for registering the input.
+ * - pattern (object): Validation pattern for the input field.
+ * - className (string): Additional CSS classes for styling.
+ * - rest (object): Other props to be passed to the input element.
+ *
+ * Features:
+ * - Displays a label and an input field with proper ARIA attributes for accessibility.
+ * - Handles showing and hiding of password fields.
+ * - Displays validation error messages.
+ */
 const InputField = <T extends FieldValues>({
   errors,
   name,

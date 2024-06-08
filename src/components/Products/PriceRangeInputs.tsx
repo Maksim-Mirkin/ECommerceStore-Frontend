@@ -9,6 +9,22 @@ interface PriceRangeInputsProps {
   onSubmit: () => void;
 }
 
+/**
+ * PriceRangeInputs Component
+ * Renders a set of input fields and a slider for selecting a price range.
+ *
+ * Props:
+ * - prices (number[]): An array containing the minimum and maximum prices.
+ * - sliderValue (number[]): The current values of the slider.
+ * - onSliderChange (function): Function to handle changes to the slider values.
+ * - onSubmit (function): Function to handle the submission of the selected price range.
+ *
+ * Features:
+ * - Displays input fields for setting minimum and maximum prices with validation.
+ * - Provides a slider to visually select the price range.
+ * - Prevents invalid characters in the input fields.
+ * - Applies the selected price range through a filter button.
+ */
 const PriceRangeInputs = ({
   prices,
   sliderValue,

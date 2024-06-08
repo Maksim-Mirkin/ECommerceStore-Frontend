@@ -1,5 +1,15 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Navbar Component
+ * Renders a navigation bar with links to various product categories, including laptops, cellulars, TVs, and headphones.
+ * Each link is styled with hover and active states for better user interaction.
+ *
+ * Features:
+ * - Navigation links to different product categories.
+ * - Styled with hover and active states for improved user experience.
+ * - Uses React Router's `Link` component for client-side navigation.
+ */
 const Navbar = () => {
   const  hoverClasses = "hover:bg-primary-light active:bg-primary-regular transition-all duration-300 ease-in-out"
   const cssClasses = `border-r-2 border-slate-100 flex-1 hover:bg-primary-light active:bg-primary-regular ${hoverClasses}`

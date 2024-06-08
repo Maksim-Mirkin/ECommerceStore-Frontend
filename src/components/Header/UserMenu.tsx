@@ -9,6 +9,27 @@ interface UserMenuProps {
   handleLogout: () => void;
 }
 
+/**
+ * UserMenu Component
+ * This component renders a menu for user actions such as viewing the account or logging out if the user is logged in,
+ * or for logging in and registering if the user is not logged in.
+ *
+ * Props:
+ * - isLoggedIn: boolean - Indicates whether the user is logged in.
+ * - anchorMenuEl: null | HTMLElement - The HTML element to anchor the menu to.
+ * - open: boolean - Indicates whether the menu is open.
+ * - handleClose: () => void - Function to handle closing the menu.
+ * - handleLogout: () => void - Function to handle logging out the user.
+ *
+ * The component uses Material-UI's Menu and MenuItem components to display the menu.
+ * It conditionally renders different menu items based on the isLoggedIn prop.
+ * If the user is logged in, it displays menu items for viewing the account and logging out.
+ * If the user is not logged in, it displays menu items for logging in and registering.
+ *
+ * The menu items use the Link component from react-router-dom for navigation.
+ * The Menu component is styled to have different background colors in light and dark modes.
+ */
+
 const UserMenu = ({
   isLoggedIn,
   anchorMenuEl,

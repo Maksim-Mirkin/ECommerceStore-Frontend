@@ -10,6 +10,35 @@ interface ProductSliderProps {
   products: Product[] | undefined;
 }
 
+/**
+ * ProductSlider Component
+ * This component displays a slider of products using the Swiper library.
+ *
+ * Props:
+ * - products (Product[] | undefined): An array of products to be displayed in the slider.
+ *
+ * Swiper Configuration:
+ * - slidesPerView: 1 (initially displays 1 slide per view)
+ * - spaceBetween: 10 (space between slides)
+ * - centeredSlides: true (centers the active slide)
+ * - loop: true (enables continuous loop mode)
+ * - pagination: { clickable: true } (enables clickable pagination)
+ * - modules: [Navigation, Pagination] (enables navigation and pagination modules)
+ * - className: "mySwiper w-[96vw] home:hidden" (custom class name for styling)
+ *
+ * Breakpoints:
+ * - 640px:
+ *   - slidesPerView: 2 (displays 2 slides per view)
+ *   - centeredSlides: false (disables centered slides)
+ * - 950px:
+ *   - slidesPerView: 3 (displays 3 slides per view)
+ *   - centeredSlides: false (disables centered slides)
+ *
+ * SwiperSlide Configuration:
+ * - key: product.id (unique key for each slide)
+ * - className: "hover:bg-slate-300 hover:rounded-3xl flex justify-center" (custom class name for styling)
+ */
+
 const ProductSlider = ({ products }: ProductSliderProps) => {
   return (
     <Swiper

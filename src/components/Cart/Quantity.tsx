@@ -7,6 +7,25 @@ interface QuantityProps {
   increase: () => void;
 }
 
+/**
+ * Quantity Component
+ * This component renders a quantity control with buttons to increase or decrease the quantity.
+ *
+ * Props:
+ * - `quantity`: The current quantity value.
+ * - `decrease`: Function to decrease the quantity.
+ * - `increase`: Function to increase the quantity.
+ *
+ * Features:
+ * - The component tracks the quantity state and disables the decrease button when the quantity is 1 and the increase button when the quantity is 5.
+ * - Uses React Icons `IoIosRemove` and `IoIosAdd` for the decrease and increase buttons respectively.
+ * - Provides hover effects and transitions for a smooth user experience.
+ *
+ * Accessibility:
+ * - Each button has an `aria-label` attribute describing its action.
+ * - The decrease button is disabled when the quantity is 1 to prevent negative quantity values.
+ * - The increase button is disabled when the quantity is 5 to limit the maximum quantity.
+ */
 const Quantity = ({
   quantity,
   decrease,

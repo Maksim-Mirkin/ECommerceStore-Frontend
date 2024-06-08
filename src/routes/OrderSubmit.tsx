@@ -1,8 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { OrderItem } from "../components/Order";
-
 import { Dialogs } from "../ui/dialogs";
-
 import { useEffect, useState } from "react";
 import { OrderService } from "../services";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +14,17 @@ type OrderSubmitProps = {
   paymentInformation: string;
   postalCode: string;
 };
-
+/**
+ * OrderSubmit Route
+ * Manages the order submission process for users within the shopping cart context.
+ * This route includes form handling for order details such as address, payment information,
+ * and phone number. It integrates with the OrderService to create orders based on the cart items
+ * and navigates the user to their order history upon successful submission.
+ *
+ * Features validation and dynamic form updates to handle various payment methods, although
+ * credit card payments are currently not available. Uses the Dialogs utility for user confirmations
+ * and error handling.
+ */
 const OrderSubmit = () => {
   const {
     register,

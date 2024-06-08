@@ -1,13 +1,24 @@
 import { useContext, useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-
 import { AuthContext } from "../contexts";
 import { Dialogs } from "../ui/dialogs";
 import { Auth } from "../services/auth-service";
 import { LoginRequest } from "../@types/types";
 import { InputField } from "../components";
 
+/**
+ * Login Route
+ * Provides an interface for user authentication, handling login credentials submission
+ * and directing authenticated users to the homepage. This route uses form validation
+ * and integrates with the AuthContext for managing authentication state.
+ *
+ * Features:
+ * - Redirects already logged-in users to the home page.
+ * - Provides input fields for username and password with validation rules.
+ * - Displays error messages and success notifications using dialog boxes.
+ * - Includes a link for users to navigate to the registration page or to request password reset.
+ */
 const Login = () => {
   const { login, isLoggedIn } = useContext(AuthContext);
   const nav = useNavigate();

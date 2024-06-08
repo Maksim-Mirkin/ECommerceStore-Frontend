@@ -21,6 +21,33 @@ type AdminPanelProps = {
   product: Product;
 };
 
+/**
+ * AdminPanel Component
+ * This component provides an interface for administrators to manage a product.
+ * Administrators can update or delete a product using this panel.
+ *
+ * Props:
+ * - product: The product to be managed, including its details like id, name, price, image, description, etc.
+ *
+ * @component
+ * @example
+ * const product = {
+ *   id: 1,
+ *   name: "Product Name",
+ *   price: 100,
+ *   image: "https://example.com/image.jpg",
+ *   description: "Product description",
+ *   brand: "Brand Name",
+ *   category: "Category",
+ *   memory: "8GB",
+ *   screenSize: "15 inches",
+ *   batteryCapacity: "4000mAh",
+ *   operatingSystem: "OS Name",
+ *   color: "Black",
+ *   averageRating: "4.5",
+ * };
+ * return <AdminPanel product={product} />;
+ */
 const AdminPanel = ({ product }: AdminPanelProps) => {
   const nav = useNavigate();
   const [openDialog, setOpenDialog] = useState(false);

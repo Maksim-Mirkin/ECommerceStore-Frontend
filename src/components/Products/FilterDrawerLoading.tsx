@@ -4,6 +4,14 @@ const LoadingItem = () => (
   </div>
 );
 
+/**
+ * FilterDrawerLoading Component
+ * Renders a loading state for the FilterDrawer by displaying multiple animated placeholder items.
+ *
+ * Features:
+ * - Displays a set of placeholder items with animation to indicate loading.
+ * - Utilizes Tailwind CSS for styling and animation.
+ */
 const FilterDrawerLoading = () => {
   return (
     <div className="flex flex-col items-center gap-2">

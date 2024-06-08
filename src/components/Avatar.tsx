@@ -5,6 +5,20 @@ interface AvatarProps {
   image: string;
 }
 
+/**
+ * Avatar Component
+ * Renders a user avatar image if a valid image URL is provided, otherwise displays a default user icon.
+ *
+ * Props:
+ * - image (string): The URL of the user avatar image.
+ *
+ * Features:
+ * - Uses the isImageURL utility function to check if the provided image URL is valid.
+ * - Displays the avatar image if the URL is valid.
+ * - Displays a default user icon if the URL is not valid.
+ * - Applies styling classes for size and appearance.
+ */
+
 const Avatar = ({ image }: AvatarProps) => {
   return isImageURL(image) ? (
     <img

@@ -1,5 +1,14 @@
 import CategoryLink from "../CategoryLink";
 
+/**
+ * CategoryLinks Component
+ * This component displays a grid of category links, each represented by an image and associated with a different product category.
+ * Each link navigates the user to the respective category page when clicked.
+ *
+ * Components Used:
+ * - CategoryLink: Represents an individual category link with an image.
+ */
+
 const CategoryLinks = () => {
   return (
     <div className="grid grid-cols-2 gap-12 my-8 xl:w-full xl:flex xl:gap-0 xl:justify-around">

@@ -3,6 +3,24 @@ import type { FC, Theme } from "../@types/types";
 
 const initialValues = { isDark: false, toggleTheme: () => {} };
 
+/**
+ * DarkModeThemeContext
+ * Provides a context for managing the dark mode theme across the application. This context allows components
+ * to access and modify the theme state, enabling dynamic theme switching.
+ *
+ * Context Structure:
+ * - isDark (boolean): Indicates whether dark mode is currently enabled.
+ * - toggleTheme (function): A function to toggle the theme between dark and light modes.
+ *
+ * DarkModeThemeProvider
+ * A provider component that encapsulates the logic for the DarkModeThemeContext, utilizing localStorage to persist
+ * the theme preference across sessions. It also applies the corresponding class to the document body to change themes.
+ *
+ * Features:
+ * - Persists theme preference in localStorage under the key 'theme'.
+ * - Dynamically adds or removes the 'dark' class to the body of the document based on the theme state, affecting the overall styling.
+ * - Provides a toggle function that allows user interaction components to switch themes easily.
+ */
 export const DarkModeThemeContext = createContext<Theme>(initialValues);
 
 export const DarkModeThemeProvider: FC = (props) => {

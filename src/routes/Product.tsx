@@ -10,7 +10,18 @@ import { AuthContext } from "../contexts";
 import { Dialogs } from "../ui/dialogs";
 import { AccentText } from "../components";
 import { useShoppingCart } from "../hooks";
-
+/**
+ * Product Route
+ * Displays detailed information about a specific product, allowing users to view product details,
+ * add items to the cart, and directly purchase products. Includes features like rating display,
+ * dynamic quantity adjustments, and admin-specific functionalities.
+ *
+ * Utilizes React Router's useParams to retrieve the product ID from the URL and fetch product data
+ * accordingly. Provides error handling and loading states to enhance user experience. Includes
+ * quantity controls with maximum and minimum limits and integrates with the shopping cart system.
+ *
+ * Admin users have additional capabilities to manage product details directly from this page.
+ */
 const Product = () => {
   const { id } = useParams();
   const { isAdmin } = useContext(AuthContext);
