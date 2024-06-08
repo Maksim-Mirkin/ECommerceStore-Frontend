@@ -88,6 +88,7 @@ const Product = () => {
         Dialogs.warning("You can only add up to 5 items of the same product.");
       }
     }
+    Dialogs.success(`${product?.name} added to cart!`);
   };
 
   return (
