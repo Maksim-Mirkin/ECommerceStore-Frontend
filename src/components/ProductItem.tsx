@@ -4,6 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../contexts";
+import { Dialogs } from "../ui/dialogs";
 
 const ProductItem = ({ id, name, price, image, averageRating }: Product) => {
   const nav = useNavigate();
@@ -11,6 +12,7 @@ const ProductItem = ({ id, name, price, image, averageRating }: Product) => {
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
     increaseItemQuantity(id);
+    Dialogs.success(`${name} added to cart!`);
   };
 
   const handleBuyNow = (e: React.MouseEvent) => {
