@@ -8,6 +8,7 @@ import {
   ProductList,
   ProductSlider,
 } from "../components/Home";
+import { baseURL } from "../utils/config";
 
 /**
  * Home Route
@@ -28,7 +29,7 @@ const Home = () => {
   const nav = useNavigate();
   const explore = () => {
     const token = localStorage.getItem("token");
-    nav(token ? "/category" : "/register");
+    nav(token ? `${baseURL}category` : `${baseURL}register`);
   };
 
   useEffect(() => {

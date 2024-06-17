@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import HeaderButton from "./HeaderButton";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../utils/config";
 
 interface SearchBarProps {
   display: string;
@@ -47,7 +48,7 @@ const SearchBar = ({
   const handleSearch = (event: FormEvent) => {
     event.preventDefault();
     if (search === "") return;
-    navigate(`/category/search?name=${search}`);
+    navigate(`${baseURL}category/search?name=${search}`);
     if (onClick) onClick();
     setSearch("");
   };

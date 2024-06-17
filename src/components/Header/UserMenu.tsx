@@ -1,5 +1,6 @@
 import { Menu, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
+import { baseURL } from "../../utils/config";
 
 interface UserMenuProps {
   isLoggedIn: boolean;
@@ -49,7 +50,7 @@ const UserMenu = ({
     >
       <MenuItem onClick={handleClose} className="p-0">
         <Link
-          to="/account/user"
+          to={`${baseURL}account/user`}
           className="block px-4 py-2 text-center hover:bg-slate-200 dark:hover:bg-slate-800 w-32"
           aria-label="Account"
         >
@@ -77,7 +78,7 @@ const UserMenu = ({
     >
       <MenuItem onClick={handleClose} className="p-0">
         <Link
-          to="/login"
+          to={`${baseURL}login`}
           className="block px-4 py-2 text-center hover:bg-slate-200 dark:hover:bg-slate-800 w-32"
           aria-label="Login"
         >
@@ -86,7 +87,7 @@ const UserMenu = ({
       </MenuItem>
       <MenuItem onClick={handleClose} className="p-0">
         <Link
-          to="/register"
+          to={`${baseURL}register`}
           className="block px-4 py-2 text-center hover:bg-slate-200 dark:hover:bg-slate-800 w-32"
           aria-label="Register"
         >

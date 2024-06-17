@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { CategoryLink } from "../components";
+import { baseURL } from "../utils/config";
 
 /**
  * Category Route
@@ -14,7 +15,7 @@ import { CategoryLink } from "../components";
  */
 const Category = () => {
   const location = useLocation();
-  const isNestedRoute = location.pathname !== "/category";
+  const isNestedRoute = location.pathname !== `${baseURL}category`;
 
   return (
     <>

@@ -4,6 +4,7 @@ import { FaCartArrowDown, FaCartPlus, FaUser } from "react-icons/fa";
 import { AuthContext } from "../contexts";
 import { IoBagAdd } from "react-icons/io5";
 import { LoadingNavLinks } from "../components/Account";
+import { baseURL } from "../utils/config";
 
 /**
  * Account Route
@@ -30,7 +31,7 @@ const Account = () => {
         <div>
           <div className="flex flex-col md:flex-row">
             <NavLink
-              to="/account/user"
+              to={`${baseURL}account/user`}
               className={({ isActive }) =>
                 isActive ? activeClassName : inactiveClassName
               }
@@ -39,7 +40,7 @@ const Account = () => {
               Personal Data
             </NavLink>
             <NavLink
-              to="/account/orders"
+              to={`${baseURL}account/orders`}
               className={({ isActive }) =>
                 isActive ? activeClassName : inactiveClassName
               }
@@ -49,7 +50,7 @@ const Account = () => {
             </NavLink>
             {isAdmin && (
               <NavLink
-                to="/account/all-orders"
+                to={`${baseURL}account/all-orders`}
                 className={({ isActive }) =>
                   isActive ? activeClassName : inactiveClassName
                 }
@@ -60,7 +61,7 @@ const Account = () => {
             )}
             {isAdmin && (
               <NavLink
-                to="/account/add-product"
+                to={`${baseURL}account/add-product`}
                 className={({ isActive }) =>
                   isActive ? activeClassName : inactiveClassName
                 }

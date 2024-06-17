@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { ProductService } from "../services";
 import { Dialogs } from "../ui/dialogs";
 import { useShoppingCart } from "../hooks";
+import { baseURL } from "../utils/config";
 
 /**
  * Cart Route
@@ -41,7 +42,7 @@ const Cart = () => {
     Dialogs.warning(
       "Your cart is empty. Please add some items to continue shopping."
     );
-    return <Navigate to="/login" replace />;
+    return <Navigate to={`${baseURL}login`} replace />;
   }
   return (
     <div className="flex">

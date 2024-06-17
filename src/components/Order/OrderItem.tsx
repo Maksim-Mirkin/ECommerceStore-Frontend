@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CartItem, Product } from "../../@types/types";
 import { ProductService } from "../../services";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../utils/config";
 
 /**
  * OrderItem Component
@@ -38,7 +39,7 @@ const OrderItem = ({ id, quantity }: CartItem) => {
   const [error, setError] = useState<string>();
   const nav = useNavigate();
   const handleNavigationToProduct = () => {
-    nav(`/products/${id}`);
+    nav(`${baseURL}products/${id}`);
   };
   useEffect(() => {
     const fetchItem = async () => {

@@ -13,6 +13,7 @@ import PaginationController from "./PaginationController";
 import { splitSortingCriteria } from "../../utils/formatUtils";
 import { sortInputs } from ".";
 import { SortDrawer } from "..";
+import { baseURL } from "../../utils/config";
 
 /**
  * `AllOrders` Component
@@ -84,7 +85,7 @@ const AllOrders = () => {
   const nav = useNavigate();
 
   const navToOrder = (id: string, order: Order) => {
-    nav(`/orders/${id}`, { state: { specificOrder: order } });
+    nav(`${baseURL}orders/${id}`, { state: { specificOrder: order } });
   };
 
   useEffect(() => {

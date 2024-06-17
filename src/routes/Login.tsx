@@ -6,6 +6,7 @@ import { Dialogs } from "../ui/dialogs";
 import { Auth } from "../services/auth-service";
 import { LoginRequest } from "../@types/types";
 import { InputField } from "../components";
+import { baseURL } from "../utils/config";
 
 /**
  * Login Route
@@ -108,7 +109,7 @@ const Login = () => {
       </div>
       <p className="text-center block my-8 text-xl">
         Don't have an account?{" "}
-        <Link to="/register" className={hoverLinkCss}>
+        <Link to={`${baseURL}register`} className={hoverLinkCss}>
           Register
         </Link>
       </p>

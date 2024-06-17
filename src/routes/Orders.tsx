@@ -6,6 +6,7 @@ import { SyntheticEvent, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { RatingService } from "../services";
 import { Dialogs } from "../ui/dialogs";
+import { baseURL } from "../utils/config";
 
 /**
  * Orders Route
@@ -131,7 +132,7 @@ const Orders = () => {
                shadow-lg shadow-primary-regular dark:shadow-white rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-600 cursor-pointer"
                   onClick={(e) => {
                     e.stopPropagation();
-                    nav(`/products/${item.product.id}`);
+                    nav(`${baseURL}products/${item.product.id}`);
                   }}
                 >
                   <div className="flex flex-col">

@@ -10,6 +10,7 @@ import OrderHeader from "./OrderHeader";
 import { SortDrawer } from "..";
 import { sortInputs, SortButton, PaginationController } from ".";
 import { splitSortingCriteria } from "../../utils/formatUtils";
+import { baseURL } from "../../utils/config";
 
 /**
  * `UserOrders` Component
@@ -112,7 +113,7 @@ const UserOrders = () => {
   };
 
   const navToOrder = (id: string, order: Order) => {
-    nav(`/orders/${id}`, { state: { specificOrder: order } });
+    nav(`${baseURL}orders/${id}`, { state: { specificOrder: order } });
   };
 
   return (

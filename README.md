@@ -12,6 +12,7 @@
 - [Technologies](#technologies)
 - [Setup](#setup)
 - [Demo](#demo)
+- [Available Users](#available-users)
 - [License](#license)
 
 ## About The App
@@ -71,6 +72,7 @@ npm run dev
 ```
 
 ## Demo
+
 ![demo1](/demo/demo1.gif)
 ![demo2](/demo/demo2.gif)
 ![demo3](/demo/demo3.gif)
@@ -80,6 +82,20 @@ npm run dev
 ![screenshot1](/demo/screenshot1.png)
 ![screenshot2](/demo/screenshot2.png)
 ![screenshot3](/demo/screenshot3.png)
+
+## Available Users
+
+- Admin
+
+  username: admin
+
+  password: Pass0rd1!
+
+- Customer
+
+  username: customer
+
+  password: Pass0rd1!
 
 ## License
 

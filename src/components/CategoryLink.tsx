@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import CategoryImage from "./CategoryImage";
+import { baseURL } from "../utils/config";
 
 
 interface CategoryLinkProps {
@@ -36,7 +37,7 @@ const CategoryLink: React.FC<CategoryLinkProps> = ({
   size,
 }) => (
   <Link
-    to={to}
+    to={`${baseURL}category/${to}`}
     className="flex flex-col items-center gap-10"
     aria-label={`Category: ${to}`}
   >

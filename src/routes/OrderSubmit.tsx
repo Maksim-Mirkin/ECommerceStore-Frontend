@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { InputField } from "../components";
 import { useShoppingCart } from "../hooks";
 import { preventSymbols } from "../utils/inputUtils";
+import { baseURL } from "../utils/config";
 
 type OrderSubmitProps = {
   address: string;
@@ -74,7 +75,7 @@ const OrderSubmit = () => {
           Dialogs.success("Order created successfully!");
           reset();
           cartItems.forEach((item) => removeItem(item.id));
-          nav("/account/orders");
+          nav(`${baseURL}account/orders`);
         } catch (e: unknown) {
           if (
             e != null &&

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Dialogs } from "../ui/dialogs";
 import { useShoppingCart } from "../hooks";
+import { baseURL } from "../utils/config";
 
 /**
  * ProductItem Component
@@ -36,10 +37,10 @@ const ProductItem = ({ id, name, price, image, averageRating }: Product) => {
 
   const handleBuyNow = (e: React.MouseEvent) => {
     handleAddToCart(e);
-    nav("/cart");
+    nav(`${baseURL}cart`);
   };
   return (
-    <Card onClick={() => nav(`/products/${id}`)}>
+    <Card onClick={() => nav(`${baseURL}products/${id}`)}>
       <img src={image} alt={name} className="h-80 max-w-48 object-contain" />
       <h3 className="mb-4 text-center">{name}</h3>
       <div className="flex justify-between gap-4 items-center mx-2 mb-4 w-72">

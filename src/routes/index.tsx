@@ -180,7 +180,7 @@ export const routes: RouteObject[] = [
   },
   {
     path: "/",
-    element: <Navigate to="/ECommerceStore-Frontend" replace={true} />,
+    element: <Navigate to={`${baseURL}`} replace={true} />,
   },
 ];
 

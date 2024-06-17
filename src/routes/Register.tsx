@@ -6,6 +6,7 @@ import { Auth } from "../services";
 import { AuthContext } from "../contexts";
 import { Avatar, InputField } from "../components";
 import { RegisterRequest } from "../@types/types";
+import { baseURL } from "../utils/config";
 
 /**
  * Register Route
@@ -129,7 +130,7 @@ const Register = () => {
       <p className="text-center block my-8 text-xl">
         Already have an account?{" "}
         <Link
-          to="/login"
+          to={`${baseURL}login`}
           className="underline hover:text-primary-regular dark:hover:text-primary-light transition-colors duration-300 ease-in-out"
         >
           Login

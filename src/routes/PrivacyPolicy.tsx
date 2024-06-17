@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { baseURL } from "../utils/config";
 
 const PrivacyPolicy = () => {
   return (
@@ -66,7 +67,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold mt-4 mb-2">7. Contact Us</h2>
           <p>
             If you have any questions about this Privacy Policy, please contact us&nbsp;
-            <Link to="/contact-us" className="underline hover:dark:text-accent-light hover:text-accent-regular" aria-label="Contact us via the contact page">here</Link>.
+            <Link to={`${baseURL}contact-us`} className="underline hover:dark:text-accent-light hover:text-accent-regular" aria-label="Contact us via the contact page">here</Link>.
           </p>
         </section>
       </article>

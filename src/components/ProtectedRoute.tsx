@@ -3,6 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import { Dialogs } from "../ui/dialogs";
 import { AuthContext } from "../contexts";
 import { FC } from "../@types/types";
+import { baseURL } from "../utils/config";
 
 /**
  * ProtectedRoute Component
@@ -22,7 +23,7 @@ const ProtectedRoute: FC = ({ children }) => {
 
   if (!isLoggedIn) {
     Dialogs.warning("You need to login to access this page");
-    return <Navigate to="/login" replace />;
+    return <Navigate to={`${baseURL}login`} replace />;
   }
 
   return children ? children : <Outlet />;

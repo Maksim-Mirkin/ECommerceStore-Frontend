@@ -10,6 +10,7 @@ import { AuthContext } from "../contexts";
 import { Dialogs } from "../ui/dialogs";
 import { AccentText } from "../components";
 import { useShoppingCart } from "../hooks";
+import { baseURL } from "../utils/config";
 /**
  * Product Route
  * Displays detailed information about a specific product, allowing users to view product details,
@@ -77,7 +78,7 @@ const Product = () => {
     if (getItemQuantity(idNum) < 5) {
       increaseItemQuantity(idNum);
     }
-    nav("/cart");
+    nav(`${baseURL}cart`);
   };
 
   const handleAddToCart = () => {

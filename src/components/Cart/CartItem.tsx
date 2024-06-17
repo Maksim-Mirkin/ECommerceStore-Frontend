@@ -6,6 +6,7 @@ import { CiCircleRemove } from "react-icons/ci";
 import Quantity from "./Quantity";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../hooks";
+import { baseURL } from "../../utils/config";
 
 /**
  * CartItem Component
@@ -37,7 +38,7 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
   const nav = useNavigate();
 
   const handleNavigationToProduct = () => {
-    nav(`/products/${id}`);
+    nav(`${baseURL}products/${id}`);
   }
 
   const handleDecrease = () => {
