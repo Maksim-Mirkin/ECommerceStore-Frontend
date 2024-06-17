@@ -7,5 +7,6 @@ export default defineConfig({
   plugins: [react(), svgr()],
   optimizeDeps: {
     include: ['swiper', 'swiper/react', 'swiper/modules', 'swiper/core']
-  }
+  },
+  base: "/ECommerceStore-Frontend/"
 })

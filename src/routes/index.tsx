@@ -1,4 +1,4 @@
-import { RouteObject } from "react-router-dom";
+import { Navigate, RouteObject } from "react-router-dom";
 import Root from "../layout/root/Root";
 import ErrorPage from "./error/ErrorPage";
 import Product from "./Product";
@@ -31,7 +31,7 @@ import { ProtectedRoute } from "../components";
  */
 export const routes: RouteObject[] = [
   {
-    path: "/", // Root route
+    path: "/ECommerceStore-Frontend", // Root route
     element: <Root />,
     errorElement: <ErrorPage />, // Default error page for any unresolved issues within this route
     children: [
@@ -174,6 +174,10 @@ export const routes: RouteObject[] = [
       {
         path: "*", // Fallback route for any unhandled paths
         element: <NotFoundError />,
+      },
+      {
+        path: "/",
+        element: <Navigate to="/ECommerceStore-Frontend" replace={true} />,
       },
     ],
   },
