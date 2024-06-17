@@ -29,9 +29,11 @@ import { ProtectedRoute } from "../components";
  * Defines the route configuration for the entire application.
  * Includes both public and protected routes, error handling routes, and routes with nested children.
  */
+const baseURL = import.meta.env.BASE_URL;
+
 export const routes: RouteObject[] = [
   {
-    path: "/ECommerceStore-Frontend", // Root route
+    path: `${baseURL}`, // Root route
     element: <Root />,
     errorElement: <ErrorPage />, // Default error page for any unresolved issues within this route
     children: [
