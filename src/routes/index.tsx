@@ -176,7 +176,7 @@ export const routes: RouteObject[] = [
         element: <NotFoundError />,
       },
       {
-        path: "/",
+        path: "",
         element: <Navigate to="/ECommerceStore-Frontend" replace={true} />,
       },
     ],
