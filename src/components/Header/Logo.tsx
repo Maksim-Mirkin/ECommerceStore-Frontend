@@ -10,8 +10,16 @@
  * - className: CSS classes for styling the logo, including a maximum height and hover effect.
  */
 
-const Logo = () => {
-  return <img src="../assets/logo.png" alt="E-commerce logo" className="max-h-16 hover-button"/>
-}
+import { baseURL } from "../../utils/config";
 
-export default Logo
+const Logo = () => {
+  return (
+    <img
+      src={`${baseURL}/assets/logo.png`}
+      alt="E-commerce logo"
+      className="max-h-16 hover-button"
+    />
+  );
+};
+
+export default Logo;

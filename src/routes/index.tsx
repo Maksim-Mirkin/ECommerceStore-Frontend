@@ -24,13 +24,12 @@ import Cart from "./Cart";
 import OrderSubmit from "./OrderSubmit";
 import Orders from "./Orders";
 import { ProtectedRoute } from "../components";
+import { baseURL } from "../utils/config";
 
 /**
  * Defines the route configuration for the entire application.
  * Includes both public and protected routes, error handling routes, and routes with nested children.
  */
-const baseURL = import.meta.env.BASE_URL;
-
 export const routes: RouteObject[] = [
   {
     path: `${baseURL}`, // Root route
@@ -177,11 +176,11 @@ export const routes: RouteObject[] = [
         path: "*", // Fallback route for any unhandled paths
         element: <NotFoundError />,
       },
-      {
-        path: "",
-        element: <Navigate to="/ECommerceStore-Frontend" replace={true} />,
-      },
     ],
+  },
+  {
+    path: "/",
+    element: <Navigate to="/ECommerceStore-Frontend" replace={true} />,
   },
 ];
 

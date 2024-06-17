@@ -3,6 +3,7 @@ import {
   useNavigate,
   useRouteError,
 } from "react-router-dom";
+import { baseURL } from "../../utils/config";
 
 /**
  * NotFoundError Route
@@ -30,7 +31,7 @@ const NotFoundError = () => {
   return (
     <div className="flex flex-col justify-evenly items-center bg-slate-100 dark:bg-slate-600 h-screen ">
       <h1 className="text-red-500">Oops!</h1>
-      <img src="../assets/sad-robot.png" alt="Sad robot" />
+      <img src={`${baseURL}/assets/sad-robot.png`} alt="Sad robot" />
       <h2 className="text-red-500 mx-8">404 - Not Found</h2>
       {errorMessage && <p className="text-red-500">{errorMessage}</p>}
       <div className="flex justify-between w-64">
