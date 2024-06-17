@@ -6,6 +6,7 @@
 
 - [Table of Contetns](#table-of-contetns)
 - [About The App](#about-the-app)
+- [Live Demo](#live-demo)
 - [Features](#features)
   - [For Shoppers](#for-shoppers)
   - [For Admins](#for-admins)
@@ -18,6 +19,10 @@
 ## About The App
 
 Discover the ultimate shopping destination for all your tech needs at E-Commerce, the innovative e-commerce platform designed for gadget enthusiasts. E-Commerce offers a wide range of high-quality products including laptops, cell phones, TVs, and headphones. Our user-friendly app ensures a seamless shopping experience on any device, thanks to its responsive design that adapts perfectly to all screen sizes.
+
+## Live Demo
+
+[Click here](https://maksim-mirkin.github.io/ECommerceStore-Frontend/)
 
 ## Features
 
