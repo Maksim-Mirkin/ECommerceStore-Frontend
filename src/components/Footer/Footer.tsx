@@ -34,7 +34,7 @@ const Footer = () => {
           Contact Us
         </Link>
         <a
-          href="http://localhost:8080/swagger-ui/index.html"
+          href="https://ecommerce-store-e805668c131b.herokuapp.com/swagger-ui/index.html"
           aria-label="Documentation"
           target="_blank"
           rel="noopener noreferrer"
