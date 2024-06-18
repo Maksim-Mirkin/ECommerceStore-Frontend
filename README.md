@@ -22,7 +22,7 @@ Discover the ultimate shopping destination for all your tech needs at E-Commerce
 
 ## Live Demo
 
-[Click here](https://maksim-mirkin.github.io/ECommerceStore-Frontend/) (without server side for now)
+[Click here](https://maksim-mirkin.github.io/ECommerceStore-Frontend/)
 
 ## Features
 
