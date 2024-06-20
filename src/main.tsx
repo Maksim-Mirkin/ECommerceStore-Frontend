@@ -1,10 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import {
-  RouterProvider,
-  createBrowserRouter,
-  HashRouter as Router,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { routes } from "./routes";
 import {
   AuthContextProvider,
@@ -12,7 +8,9 @@ import {
   ShoppingCartContextProvider,
 } from "./contexts";
 
+// Create a router with the routes array
 const router = createBrowserRouter(routes);
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement!);
 
@@ -21,9 +19,7 @@ root.render(
     <AuthContextProvider>
       <DarkModeThemeProvider>
         <ShoppingCartContextProvider>
-          <Router>
-            <RouterProvider router={router} />
-          </Router>
+          <RouterProvider router={router} />
         </ShoppingCartContextProvider>
       </DarkModeThemeProvider>
     </AuthContextProvider>
