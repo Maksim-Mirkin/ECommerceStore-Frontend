@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import { routes } from "./routes";
 import {
   AuthContextProvider,
@@ -8,7 +8,7 @@ import {
   ShoppingCartContextProvider,
 } from "./contexts";
 
-const router = createBrowserRouter(routes);
+const router = createHashRouter(routes);
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement!);
 
