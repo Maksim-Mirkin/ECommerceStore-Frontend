@@ -7,6 +7,7 @@ import Quantity from "../Quantity";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../../hooks";
 import { baseURL } from "../../../utils/config";
+import LoadingItem from "./LoadingItem";
 
 /**
  * DrawerItem component displays a product in the shopping cart drawer.
@@ -50,7 +51,7 @@ const DrawerItem = ({ id, quantity }: CartItem) => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingItem/>;
   }
 
   if (item === null) {
@@ -61,7 +62,7 @@ const DrawerItem = ({ id, quantity }: CartItem) => {
     <div className="flex flex-col justify-between items-center border relative border-black rounded-xl mx-4">
       <div className="flex flex-col items-center gap-2 ">
         <div
-          className="flex flex-col  hover:scale-105 hover:mb-2"
+          className="flex flex-col  hover:scale-105 hover:my-2 transition-all duration-300 ease-in-out cursor-pointer"
           onClick={handleNavigationToProduct}
         >
           <img src={item.image} alt={item.name} className="h-48 w-48" />
