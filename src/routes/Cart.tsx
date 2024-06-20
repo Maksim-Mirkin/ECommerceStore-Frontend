@@ -80,7 +80,7 @@ const Cart = () => {
           <h3>Subtotal: {subtotal.toFixed(2)}$</h3>
           <h3>Delivery: {delivery}$</h3>
           <h2>Total: {(subtotal + delivery).toFixed(2)}$</h2>
-          <Link to="/order" className="action-button text-center mb-0">
+          <Link to={`${baseURL}order`} className="action-button text-center mb-0">
             Continue with payment
           </Link>
           <div className="flex gap-2 items-center justify-center pb-2 dark:text-white">
