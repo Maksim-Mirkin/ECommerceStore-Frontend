@@ -3,7 +3,6 @@ import "./index.css";
 import {
   RouterProvider,
   createBrowserRouter,
-  HashRouter as Router,
 } from "react-router-dom";
 import { routes } from "./routes";
 import {
