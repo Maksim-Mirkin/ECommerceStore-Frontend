@@ -55,6 +55,7 @@ const Products = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [error, setError] = useState<string | undefined>();
+  const [loading, setLoading] = useState(false);
   const [isSortDrawerOpen, setIsSortDrawerOpen] = useState(false);
   const [sortCriteria, setSortCriteria] = useState("");
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
@@ -107,6 +108,8 @@ const Products = () => {
       const sortByProperty = sortKey as SortByType;
       const sortDirection = sortOrder as "asc" | "desc";
       try {
+        setLoading(true);
+        setError(undefined);
         const res = await ProductService.fetchProducts({
           ...(lastPath === "search"
             ? { name: name || "" }
@@ -131,6 +134,8 @@ const Products = () => {
         setHasMore(!res.isLast);
       } catch (e) {
         handleError(e);
+      } finally {
+        setLoading(false);
       }
     },
     [lastPath, name]
@@ -219,7 +224,7 @@ const Products = () => {
       >
         <div className="flex justify-center mb-8">
           <div className="flex flex-[3] flex-wrap justify-center items-center gap-8">
-            {productList.length === 0 ? (
+            {productList.length === 0 && !loading ? (
               <p className="text-center mt-8">There are no products</p>
             ) : (
               productList.map((product) => (
