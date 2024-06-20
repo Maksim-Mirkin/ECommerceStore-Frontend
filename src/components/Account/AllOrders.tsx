@@ -138,7 +138,7 @@ const AllOrders = () => {
       )}
       {error && <h2 className="error">{error}</h2>}
       {isAdmin ? (
-        orders && !loading ? (
+        orders ? (
           <div>
             <OrderHeader />
             <OrderGrid orders={orders} navigateToOrder={navToOrder} />
@@ -154,7 +154,7 @@ const AllOrders = () => {
           <h1 className="m-auto">There are no orders yet!</h1>
         )
       ) : (
-        <h1 className="error">Access Denied</h1>
+        !error && !loading && <h1 className="error">Access Denied</h1>
       )}
       <SortDrawer
         isOpen={isSortDrawerOpen}
