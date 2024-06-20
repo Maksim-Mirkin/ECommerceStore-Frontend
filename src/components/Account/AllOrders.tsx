@@ -151,10 +151,11 @@ const AllOrders = () => {
             />
           </div>
         ) : (
-          <h1 className="m-auto">There are no orders yet!</h1>
+          !error &&
+          !loading && <h1 className="m-auto">There are no orders yet!</h1>
         )
       ) : (
-        !error && !loading && <h1 className="error">Access Denied</h1>
+        <h1 className="error">Access Denied</h1>
       )}
       <SortDrawer
         isOpen={isSortDrawerOpen}
