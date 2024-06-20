@@ -46,7 +46,7 @@ const ShoppingCart = () => {
       onClose={closeCart}
       direction={"right"}
       lockBackgroundScroll
-      className="w-full flex flex-col overflow-y-auto overflow-x-hidden sm:w-3/4 lg:w-1/2 xl:w-1/3"
+      className="w-full flex flex-col overflow-y-auto overflow-x-hidden sm:w-3/4 lg:w-1/2 xl:w-1/3 py-12 sm:p-0"
     >
       <div className="flex-1">
         <div className="flex justify-between items-center w-full mt-2 mx-1">
