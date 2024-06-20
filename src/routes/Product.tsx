@@ -5,7 +5,7 @@ import { ProductService } from "../services";
 import { IoCartOutline } from "react-icons/io5";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { Rating } from "@mui/material";
-import { GridCell, AdminPanel } from "../components/Product";
+import { GridCell, AdminPanel, ContentLoader } from "../components/Product";
 import { AuthContext } from "../contexts";
 import { Dialogs } from "../ui/dialogs";
 import { AccentText } from "../components";
@@ -95,7 +95,7 @@ const Product = () => {
   return (
     <div className="flex flex-col items-center px-4">
       {loading ? (
-        <p>Loading...</p>
+        <ContentLoader/>
       ) : error ? (
         <p className="text-red-500 my-48 text-center text-lg sm:text-3xl">
           {error}
