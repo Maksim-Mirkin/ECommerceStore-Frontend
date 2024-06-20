@@ -22,7 +22,7 @@ import { baseURL } from "../../utils/config";
  * It leverages the AuthContext to ensure that only users with admin privileges can access this administrative view.
  * Additionally, it includes pagination controls, a sorting mechanism through a sort drawer, and error handling.
  * The component also dynamically loads order data and displays them in both grid and row formats depending on the viewing preference.
- * 
+ *
  * Features:
  * - Conditional rendering based on user permissions, allowing only admins to view the content.
  * - Dynamic order fetching based on current page and sorting criteria, which updates via effects when these parameters change.
@@ -138,7 +138,7 @@ const AllOrders = () => {
       )}
       {error && <h2 className="error">{error}</h2>}
       {isAdmin ? (
-        orders ? (
+        orders && !loading ? (
           <div>
             <OrderHeader />
             <OrderGrid orders={orders} navigateToOrder={navToOrder} />
