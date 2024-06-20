@@ -7,6 +7,8 @@ import Quantity from "./Quantity";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../hooks";
 import { baseURL } from "../../utils/config";
+import { set } from "react-hook-form";
+import LoaderItem from "./LoaderItem";
 
 /**
  * CartItem Component
@@ -51,6 +53,7 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
+        setLoading(true);
         const fetchedItem = await ProductService.fetchProduct(id);
         setItem(fetchedItem);
       } catch (error) {
@@ -64,7 +67,7 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
   }, [id]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoaderItem/>;
   }
 
   if (item === null) {
