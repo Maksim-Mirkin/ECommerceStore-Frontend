@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import {
   AuthContextProvider,
@@ -8,7 +8,6 @@ import {
   ShoppingCartContextProvider,
 } from "./contexts";
 
-const router = createBrowserRouter(routes);
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement!);
 
@@ -17,7 +16,13 @@ root.render(
     <AuthContextProvider>
       <DarkModeThemeProvider>
         <ShoppingCartContextProvider>
-          <RouterProvider router={router} />
+          <Router>
+            <Routes>
+              {routes.map((route, index) => (
+                <Route key={index} path={route.path} element={route.element} />
+              ))}
+            </Routes>
+          </Router>
         </ShoppingCartContextProvider>
       </DarkModeThemeProvider>
     </AuthContextProvider>
