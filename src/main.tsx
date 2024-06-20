@@ -1,9 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import {
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { routes } from "./routes";
 import {
   AuthContextProvider,
