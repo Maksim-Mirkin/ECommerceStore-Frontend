@@ -6,6 +6,7 @@ import { ProductService } from "../../../services";
 import { Link } from "react-router-dom";
 import DrawerItem from "./DrawerItem";
 import { useShoppingCart } from "../../../hooks";
+import { baseURL } from "../../../utils/config";
 
 /**
  * ShoppingCart component provides a slide-in drawer that displays cart items.
@@ -69,7 +70,7 @@ const ShoppingCart = () => {
           <h1>{total.toFixed(2)}$</h1>
         </div>
         <Link
-          to="/cart"
+          to={`${baseURL}cart`}
           className="action-button w-11/12 mt-2 self-center text-center"
           onClick={closeCart}
         >
