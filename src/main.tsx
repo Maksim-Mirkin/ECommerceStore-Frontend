@@ -1,6 +1,10 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  HashRouter as Router,
+} from "react-router-dom";
 import { routes } from "./routes";
 import {
   AuthContextProvider,
@@ -17,7 +21,9 @@ root.render(
     <AuthContextProvider>
       <DarkModeThemeProvider>
         <ShoppingCartContextProvider>
-          <RouterProvider router={router} />
+          <Router>
+            <RouterProvider router={router} />
+          </Router>
         </ShoppingCartContextProvider>
       </DarkModeThemeProvider>
     </AuthContextProvider>
