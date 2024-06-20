@@ -7,7 +7,6 @@ import Quantity from "./Quantity";
 import { useNavigate } from "react-router-dom";
 import { useShoppingCart } from "../../hooks";
 import { baseURL } from "../../utils/config";
-import { set } from "react-hook-form";
 import LoaderItem from "./LoaderItem";
 
 /**
