@@ -3,6 +3,7 @@ import { CartItem, Product } from "../../@types/types";
 import { ProductService } from "../../services";
 import { useNavigate } from "react-router-dom";
 import { baseURL } from "../../utils/config";
+import LoadingItem from "./LoadingItem";
 
 /**
  * OrderItem Component
@@ -64,7 +65,7 @@ const OrderItem = ({ id, quantity }: CartItem) => {
     fetchItem();
   }, [id]);
   if (loading) {
-    return <div>Loading...</div>;
+    return <LoadingItem/>;
   }
   if (error) {
     return <div>{error}</div>;
@@ -83,7 +84,7 @@ const OrderItem = ({ id, quantity }: CartItem) => {
         alt={item.name}
         className="h-40 w-40 object-scale-down"
       />
-      <div className="w-40">
+      <div className="w-40 sm:w-fit">
         <h2>{item.name}</h2>
         <p>Quantity: {quantity}</p>
       </div>
