@@ -39,7 +39,7 @@ const DemoProduct = ({
         <h3>{price}$</h3>
         <div className="flex items-center gap-2 ">
           <FaStar className="text-orange-200" />
-          <p>{averageRating}</p>
+          <p>{averageRating.toFixed(2)}</p>
         </div>
         <div className="flex justify-between w-36">
           <button

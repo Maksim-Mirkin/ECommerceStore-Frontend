@@ -327,9 +327,7 @@ const AdminPanel = ({ product }: AdminPanelProps) => {
             price={price}
             image={imageURL}
             averageRating={
-              parseFloat(product.averageRating) === 0
-                ? 4.9
-                : parseFloat(product.averageRating)
+              parseFloat(product.averageRating)
             }
           />
         </DialogContent>
