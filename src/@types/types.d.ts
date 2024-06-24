@@ -50,6 +50,7 @@ export interface AuthContextType {
  */
 export type RegisterRequest = {
   username: string;
+  userImage: string;
   email: string;
   password: string;
   confirmPassword: string;
