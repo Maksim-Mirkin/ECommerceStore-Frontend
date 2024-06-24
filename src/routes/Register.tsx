@@ -53,9 +53,14 @@ const Register = () => {
       login(res.jwt);
       Dialogs.success("Registration successful! Enjoy your stay!");
       navigate("/");
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        Dialogs.error(error.message);
+    } catch (e) {
+      if (
+        e != null &&
+        typeof e == "object" &&
+        "message" in e &&
+        typeof e["message"] == "string"
+      ) {
+        Dialogs.error(e.message as string);
       } else {
         Dialogs.error("An unexpected error occurred. Please try again.");
       }
