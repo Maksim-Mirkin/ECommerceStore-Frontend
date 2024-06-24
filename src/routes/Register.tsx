@@ -87,7 +87,7 @@ const Register = () => {
           register={register}
           errors={errors}
           placeholder="Image URL"
-          name="image"
+          name="userImage"
           type="text"
           onChange={(e) => {
             setImage(e.target.value);
