@@ -60,7 +60,7 @@ const Register = () => {
         "message" in e &&
         typeof e["message"] == "string"
       ) {
-        Dialogs.error(e.message as string);
+        Dialogs.error(e.message);
       } else {
         Dialogs.error("An unexpected error occurred. Please try again.");
       }
